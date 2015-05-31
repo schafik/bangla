@@ -1,10 +1,10 @@
 <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
 
-## Baseline Survey
-### [Demographics](http://schafik.github.io/bangla/1_demographics.html)
+### Baseline Survey
+ * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
+ * other sections coming soon...
 
-
-### other sections
- * will appear shortly...
+### Follow up 1
+ * sections to appear shortly...
 
  
