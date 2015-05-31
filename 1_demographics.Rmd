@@ -111,7 +111,7 @@ plot_percent(baseline, "dy_exp", coordflippin = T) #how many more years intended
 
 Tri-modal salary spread:
 
-```{r, echo=FALSE, fig.width=6, fig.height=3.5, warning=FALSE}
+```{r, echo=FALSE, fig.width=6, fig.height=3.5, warning=FALSE, cache=TRUE}
 ggplot(baseline, aes(x=salamount)) + 
       geom_histogram(colour="black", fill = "#F0E442") + 
   geom_vline(aes(xintercept=mean(salamount, na.rm=T)),   
