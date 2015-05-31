@@ -1,0 +1,6 @@
+base
+foreign
+readr
+stringr
+dplyr
+ggplot2

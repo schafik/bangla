@@ -1,0 +1,180 @@
+---
+title: "Baseline Data: Demographics"
+author: "salah chafik"
+date: "May 29, 2015"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
+```
+
+#a note about this analysis
+The numbers above bar plots are percentages. Any dotted lines on histograms are the mean for that variable. 
+
+#basic demographics
+##gender
+Sex/Gender are nearly identical. 
+
+```{r echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "gender") #gender
+plot_percent(baseline, "sex") #nearly identical
+```
+
+6% of people's gender was reported to be wrong. As a reference point, 7% of people's names and factory line, and 14% of people's salary amount were reported to be wrong.
+
+```{r echo = FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "idconf_gender") #6% of people's gender was wrong
+```
+
+Of the 6%, more Males (previously labeled as females) correcting their gender. This may be indicative of [hijrahs](http://en.wikipedia.org/wiki/Hijra_%28South_Asia%29).
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "identer_gender")
+#   table(baseline$idconf_name)#as a reference point, 7% of ppl's names wrong..
+#   table(baseline$idconf_fline)#and factory line
+#   table(baseline$idconf_salamount) #14% incorrect salary amount
+```
+
+##religion
+No surprises here:
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "dreligion") #religion
+```
+
+#family status
+##children
+Does the respondent have children (left) and whether or not the children reside with the respondent (right). Children **overwhelmingly** not living with parent. 
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "dchild") #children
+plot_percent(baseline, "dchild_stay") #do children live with you
+```
+
+##marital status
+Marriage numbers (left) and marriage numbers by gender (right): 
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "dmarried") #marriage
+```
+```{r, echo=FALSE, fig.width=4, fig.height=3.75, cache=TRUE}
+plot_percent2(baseline, "dmarried", "gender") #marriage rate by gender
+```
+
+60/40 split between those that live/don't live with their spouse:
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "dlive_sp") #live together with spouse 
+```
+
+##dependent family
+Average of 4-5 dependent family members on respondent for both food (left) and income (right).
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_hist(baseline, "dmem_dep_food") #fam dependent on food
+plot_hist(baseline, "dmem_dep_fin") #fam dependent on income
+```
+
+#credentials
+##education
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dedu", coordflippin = T) #education
+```
+
+Literacy in Bangla is 60/40 (left), however for English it's 10/90 (right):
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "dletterb") #literacy in Bangla
+plot_percent(baseline, "dlettere") #literacy in English
+```
+
+##work experience
+Years at any factory (top) and years at current job (bottom):
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dy_garment", coordflippin = T) #years at any garment factory 
+plot_percent(baseline, "dy_currjob", coordflippin = T) #years at current job
+```
+
+Years intended to work in the future. Majority of respondents intend to work 1-6 years longer:
+
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dy_exp", coordflippin = T) #how many more years intended to work
+```
+
+#income
+
+Tri-modal salary spread:
+
+```{r, echo=FALSE, fig.width=6, fig.height=3.5, cache=TRUE}
+ggplot(baseline, aes(x=salamount)) + 
+      geom_histogram(colour="black", fill = "#F0E442")
+```
+
+A look at salary by gender (top), and by gender + marriage (bottom). Noteworthy that **no real difference on aggregate** for income, and that **married males make more than unmarried males**:
+
+```{r, echo=FALSE, fig.width=12, fig.height=3, cache=TRUE}
+ggplot(filter(baseline, !is.na(gender)), #income by gender
+  aes(x=gender, y=salamount, fill=gender)) + geom_boxplot() + 
+  guides(fill=FALSE) + coord_flip()
+
+ggplot(filter(baseline, !is.na(gender)), #income + gender + marital status
+  aes(x=gender, y=salamount, fill=dmarried)) + geom_boxplot() + coord_flip()
+```
+
+A look at spousal salary. 23% of respondent spouses' do not have a salary:
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dsp_inc", coordflippin = T) #spouse's income
+```
+
+##overtime
+Overtime earnings overall (top) and by gender (bottom):
+```{r, echo=FALSE, fig.width=12, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dinc_over", coordflippin = T) #monthly overtime earnings
+plot_percent2(baseline, "dinc_over", "gender", coordflippin = T) #by gender
+```
+
+#10-step ladder
+The following section has questions based on the 10 step ladder; the first being the worst and the tenth being the best. 
+
+###communal respect
+A quarter of respondents feel they have stree cred:
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dresp_comm", coordflippin = T) #street cred/respect
+```
+
+###life: right now
+Most feel like everything is in it's right place:
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dcurr_status", coordflippin = T) #life right now
+```
+
+###life: in 5 years
+Still most feel like things will get dramatically better:
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dfut_status", coordflippin = T) #where you'll be in life in 5 years
+```
+
+###life: 5 years ago
+And most feel they drastically improved:
+```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
+plot_percent(baseline, "dpast_status", coordflippin = T) #where you were in life 5 years ago  
+```
+
+#misc
+##factory
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_percent(baseline, "factory") #factory
+```
+
+##advice
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_hist(baseline, "dadvice") #people come to you for advice
+```
+
+
