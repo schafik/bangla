@@ -87,7 +87,7 @@ plot_hist(baseline, "dmem_dep_fin") #fam dependent on income
 plot_percent(baseline, "dedu", coordflippin = T) #education
 ```
 
-Literacy in Bangla is 60/40 (left), however for English it's 10/90 (right):
+Literacy in Bangla is 60/40 (left), however for English it's only 10/90 (right):
 
 ```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
 plot_percent(baseline, "dletterb") #literacy in Bangla
