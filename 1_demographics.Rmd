@@ -111,9 +111,11 @@ plot_percent(baseline, "dy_exp", coordflippin = T) #how many more years intended
 
 Tri-modal salary spread:
 
-```{r, echo=FALSE, fig.width=6, fig.height=3.5, cache=TRUE}
+```{r, echo=FALSE, fig.width=6, fig.height=3.5, warning=FALSE}
 ggplot(baseline, aes(x=salamount)) + 
-      geom_histogram(colour="black", fill = "#F0E442")
+      geom_histogram(colour="black", fill = "#F0E442") + 
+  geom_vline(aes(xintercept=mean(salamount, na.rm=T)),   
+               color="black", linetype="dashed", size=.5)
 ```
 
 A look at salary by gender (top), and by gender + marriage (bottom). Noteworthy that **no real difference on aggregate** for income, and that **married males make more than unmarried males**:
