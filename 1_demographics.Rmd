@@ -5,6 +5,7 @@ output:
     toc: yes
     number_sections: no
     theme: spacelab
+    self_contained: no
 ---
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
@@ -25,7 +26,7 @@ plot_percent(baseline, "gender") #gender
 plot_percent(baseline, "sex") #nearly identical
 ```
 
-6% of people's gender was reported to be wrong. As a reference point, 7% of people's names and factory line, and 14% of people's salary amount were reported to be wrong.
+6% of people's gender was reported to be wrong. As a reference point, 7% of people's names and factory line, and 14% of people's salary amount were reported to be wrong:
 
 ```{r echo = FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
 plot_percent(baseline, "idconf_gender") #6% of people's gender was wrong
