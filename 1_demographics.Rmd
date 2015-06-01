@@ -143,7 +143,7 @@ plot_percent2(baseline, "dinc_over", "gender", coordflippin = T) #by gender
 The following section has questions based on the 10 step ladder; the first being the worst and the tenth being the best. 
 
 ###communal respect
-A quarter of respondents feel they have street cred:
+A quarter of respondents feel they have maximum street cred:
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
 plot_percent(baseline, "dresp_comm", coordflippin = T) #street cred/respect
 ```
@@ -161,7 +161,7 @@ plot_percent(baseline, "dfut_status", coordflippin = T) #where you'll be in life
 ```
 
 ###life: 5 years ago
-And most feel they drastically improved:
+And most feel things significantly improved:
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
 plot_percent(baseline, "dpast_status", coordflippin = T) #where you were in life 5 years ago  
 ```
