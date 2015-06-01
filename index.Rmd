@@ -11,8 +11,8 @@ output:
 ### Baseline Survey
  * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
  * other sections coming soon...
-    * accommodation
- 	* assets 
+  * accommodation
+  * assets
  	* consumption + expenses
  	* savings
  	* credit
