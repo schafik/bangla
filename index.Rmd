@@ -1,0 +1,31 @@
+---
+title: "Bangladesh Factories"
+output: 
+  html_document:
+    toc: no
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+
+
+### Baseline Survey
+ * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
+ * other sections coming soon...
+   * accommodation
+ 	* assets 
+ 	* consumption + expenses
+ 	* savings
+ 	* credit
+ 	* general numeracy (probably belongs in demographics?)
+ 	* remittances
+ 	* risk + time preferences 
+ 	* trust + altruism (probably belongs in demographics?)
+ 	* financial literacy/capability
+ 	* locus of control 
+ 	* work satisfaction 
+
+### Follow up 1
+ * sections to appear shortly...
+
+ 
