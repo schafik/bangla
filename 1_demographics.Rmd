@@ -1,7 +1,5 @@
 ---
 title: "Baseline Data: Demographics"
-author: "salah chafik"
-date: "May 29, 2015"
 output: 
   html_document:
     toc: yes
@@ -129,7 +127,7 @@ ggplot(filter(baseline, !is.na(gender)), #income + gender + marital status
   aes(x=gender, y=salamount, fill=dmarried)) + geom_boxplot() + coord_flip()
 ```
 
-A look at spousal salary. 23% of respondent spouses' do not have a salary:
+A look at spousal salary. Noteworthy that 23% of respondent spouses' do not have a salary:
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
 plot_percent(baseline, "dsp_inc", coordflippin = T) #spouse's income
 ```
@@ -145,7 +143,7 @@ plot_percent2(baseline, "dinc_over", "gender", coordflippin = T) #by gender
 The following section has questions based on the 10 step ladder; the first being the worst and the tenth being the best. 
 
 ###communal respect
-A quarter of respondents feel they have stree cred:
+A quarter of respondents feel they have street cred:
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
 plot_percent(baseline, "dresp_comm", coordflippin = T) #street cred/respect
 ```

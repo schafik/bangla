@@ -1,7 +1,5 @@
 ---
 title: "Baseline Data: Demographics"
-author: "salah chafik"
-date: "May 29, 2015"
 output: 
   html_document:
     toc: yes
@@ -78,7 +76,7 @@ A look at salary by gender (top), and by gender + marriage (bottom). Noteworthy 
 
 ![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png) ![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-2.png) 
 
-A look at spousal salary. 23% of respondent spouses' do not have a salary:
+A look at spousal salary. Noteworthy that 23% of respondent spouses' do not have a salary:
 ![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png) 
 
 ##overtime
@@ -89,7 +87,7 @@ Overtime earnings overall (top) and by gender (bottom):
 The following section has questions based on the 10 step ladder; the first being the worst and the tenth being the best. 
 
 ###communal respect
-A quarter of respondents feel they have stree cred:
+A quarter of respondents feel they have street cred:
 ![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png) 
 
 ###life: right now
