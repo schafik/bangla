@@ -12,8 +12,8 @@ output:
 
  * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
   * other sections coming soon...
-   * accomodation
-   * assets
+   	* accomodation
+   	* assets
  	* consumption + expenses
  	* savings
  	* credit
