@@ -15,7 +15,7 @@ output:
 ```
 ## 
 ## % Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-## % Date and time: Sun, Jun 07, 2015 - 17:37:19
+## % Date and time: Sun, Jun 07, 2015 - 17:47:49
 ## \begin{table}[!htbp] \centering 
 ##   \caption{} 
 ##   \label{} 

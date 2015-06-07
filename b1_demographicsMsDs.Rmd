@@ -24,6 +24,7 @@ baseline_mSD <- select(baseline,
                        monthly_overtime = dinc_over, ladder_respect = dresp_comm, ladder_currStatus = dcurr_status, 
                        ladder_futStatus = dfut_status, ladder_pastStatus = dpast_status, factory, advice = dadvice)
 stargazer(baseline_mSD)
+
 ```
 
 

@@ -1,6 +1,7 @@
 
 ### Baseline Survey
  * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
+ 	*[means + SDs](http://schafik.github.io/bangla/1_demographicsMsDs.html)
  * other sections coming soon...
  	* accommodation
  	* assets 
