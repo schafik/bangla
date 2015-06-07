@@ -10,7 +10,7 @@ output:
 
 ### Baseline Survey
 
- * [Demographics](http://schafik.github.io/bangla/1_demographics.html)
+ * [Demographics](http://schafik.github.io/bangla/b1_demographics.html)
   * other sections coming soon...
    	* accomodation
    	* assets
@@ -27,6 +27,11 @@ output:
 
 
 ### Follow up 1
- * sections to appear shortly...
+ * [Demographics](http://schafik.github.io/bangla/f1_demographics.html)
+ * Accomodation
+ * Assets
+ * Savings
+ * Credit
+ 
 
  
