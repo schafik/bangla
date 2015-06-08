@@ -38,11 +38,11 @@ plot_percent(followup, "l_outlo_rep_count")
 
 ##source
 Most loans are taken from family/friends. The first loan (top) and second loan (bottom):
-```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=17, fig.height=2.75, cache=T}
 plot_percent(followup, "nfe_loan_out1", coordflippin = T)
 ```
 
-```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=17, fig.height=2.75, cache=T}
 plot_percent(followup, "nfe_loan_out2", coordflippin = T)
 ```
 
@@ -51,12 +51,12 @@ plot_percent(followup, "nfe_loan_out2", coordflippin = T)
 
 ##repayment
 What is left for repayment on first loan is mostly to the tune of 1-3K Taka:
-```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=17, fig.height=2.75, cache=T}
 plot_percent(followup, "am_loan_out1", coordflippin = T)
 ```
 
 3/4 of respondents with second loans have below 3K Taka to pay back:
-```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=17, fig.height=2.75, cache=T}
 plot_percent(followup, "am_loan_out2", coordflippin = T)
 ```
 
@@ -80,7 +80,7 @@ plot_hist(followup, "rem_sentn_receipients")
 ##amount
 
 Total amount sent over past month for **most is between 2-5K Taka**:
-```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=17, fig.height=2.75, cache=T}
 plot_percent(followup, "rem_senttot_am_s", coordflippin = T)
 ```
 
@@ -92,7 +92,7 @@ plot_percent(followup, "rem_senthhtr_s")
 ```
 
 Of the **14% that have**, here is the breakdown of amount: 
-```{r, echo=FALSE, fig.width=14, fig.height=2.75, cache=T}
+```{r, echo=FALSE, fig.width=15, fig.height=2.75, cache=T}
 plot_percent(followup, "rem_sentam_hhtr_s", coordflippin = T)
 ```
 
