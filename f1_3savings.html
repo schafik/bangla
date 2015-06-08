@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Follow-up 1 Data: Savings</title>
+
+<script src="f1_3savings_files/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="f1_3savings_files/bootstrap-3.3.1/css/spacelab.min.css" rel="stylesheet" />
+<script src="f1_3savings_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="f1_3savings_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="f1_3savings_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="f1_3savings_files/highlight/default.css"
+      type="text/css" />
+<script src="f1_3savings_files/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Follow-up 1 Data: Savings</h1>
+<h4 class="date"><em>Updated 08 June, 2015</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#means-and-sds">means and SDs</a></li>
+<li><a href="#overall-savings">overall savings</a></li>
+<li><a href="#ladder">ladder</a></li>
+<li><a href="#formal-savings">formal savings</a></li>
+</ul>
+</div>
+
+<div id="means-and-sds" class="section level1">
+<h1>means and SDs</h1>
+<p>for numeric variables</p>
+<table style="text-align:center">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Statistic
+</td>
+<td>
+overall_savings
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+N
+</td>
+<td>
+1,884
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Mean
+</td>
+<td>
+17,684.710
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+St. Dev.
+</td>
+<td>
+52,844.150
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Min
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Max
+</td>
+<td>
+1,800,000
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+</table>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+</div>
+<div id="overall-savings" class="section level1">
+<h1>overall savings</h1>
+<p>more than half of people do no have any savings (top) and even less their spouses (bottom): <img src="f1_3savings_files/figure-html/unnamed-chunk-4-1.png" title="" alt="" width="1248" /><img src="f1_3savings_files/figure-html/unnamed-chunk-4-2.png" title="" alt="" width="1248" /></p>
+<p>large right skew of savings distribution, with 17K being the average: <img src="f1_3savings_files/figure-html/unnamed-chunk-5-1.png" title="" alt="" width="672" /></p>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+</div>
+<div id="ladder" class="section level1">
+<h1>ladder</h1>
+<p>How good do you feel at saving? (Step 1 is really bad Step 10 is excellent): <img src="f1_3savings_files/figure-html/unnamed-chunk-6-1.png" title="" alt="" width="1248" /></p>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+</div>
+<div id="formal-savings" class="section level1">
+<h1>formal savings</h1>
+<p>Do you have savings set aside in any of the following account (in your name, in your children’s name or jointly in your name and somebody else’s name)? <strong>Most choose DPS accounts</strong>* <img src="f1_3savings_files/figure-html/unnamed-chunk-7-1.png" title="" alt="" width="1248" /></p>
+<p>of the <strong>529 respondents with formal accounts</strong>, here is the breakdown of balances: <img src="f1_3savings_files/figure-html/unnamed-chunk-8-1.png" title="" alt="" width="1248" /></p>
+<p>Informal savings accounts: <img src="f1_3savings_files/figure-html/unnamed-chunk-9-1.png" title="" alt="" width="1248" /></p>
+<p>of the <strong>395 respondents with informal accounts</strong>, here is breakdown of balances: <img src="f1_3savings_files/figure-html/unnamed-chunk-10-1.png" title="" alt="" width="1248" /></p>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+<pre class="r"><code>#sugested variables to keep:
+&quot;sgrange_sav&quot;   
+&quot;sgam_sav_sp&quot;   
+&quot;sgam_sav1&quot;:&quot;sgam_sav17&quot;
+&quot;sgachi_goal_gen&quot;       
+&quot;nfe_for1&quot;            
+&quot;bal_for_acc1&quot;
+&quot;nfe_info1&quot;             
+&quot;balance_info_acc1&quot;     
+
+#note it is not worth asking about second formal/informal accounts...
+#we are only getting literally a handful of respondents mention anything</code></pre>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -11,28 +11,25 @@ output:
 ### Baseline Survey
 
  * [Demographics](http://schafik.github.io/bangla/b1_demographics.html)
-    * [means + SDs](http://schafik.github.io/bangla/b1_demographicsMsDs.html)
-  * other sections coming soon...
-   	* accomodation
-   	* assets
- 	* consumption + expenses
- 	* savings
- 	* credit
- 	* general numeracy (probably belongs in demographics?)
- 	* remittances
- 	* risk + time preferences 
- 	* trust + altruism (probably belongs in demographics?)
- 	* financial literacy/capability
- 	* locus of control 
- 	* work satisfaction 
+ * accomodation
+ * assets
+ * consumption + expenses
+ * savings
+ * credit
+ * general numeracy (probably belongs in demographics?)
+ * remittances
+ * risk + time preferences 
+ * trust + altruism (probably belongs in demographics?)
+ * financial literacy/capability
+ * locus of control 
+ * work satisfaction 
 
 
 ### Follow up 1
- * [Demographics](http://schafik.github.io/bangla/f1_demographics.html)
- * Accomodation
- * Assets
- * Savings
- * Credit
+ * [Demographics](http://schafik.github.io/bangla/f1_1demo.html)
+ * [Consumption](http://schafik.github.io/bangla/f1_2consumption.html)
+ * [Savings](http://schafik.github.io/bangla/f1_3savings.html)
+ * [Loans + Remittances](http://schafik.github.io/bangla/f1_4loansremitt.html)
  
 
  

@@ -1,5 +1,6 @@
 ---
 title: "Baseline Data: Demographics"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document:
     toc: yes
@@ -13,6 +14,25 @@ source("/git_repositories/bangla/scripts/load_packages.R")
 source("/git_repositories/bangla/scripts/plotting_functions.R")
 baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
 ```
+
+#means and SDs
+for numeric variables
+```{r, echo=FALSE}
+baseline_mSD <- select(baseline, 
+                       gender, sex, religion = dreligion, children = dchild, child_stay = dchild_stay, married = dmarried, 
+                       live_spouse = dlive_sp, family_dep_food = dmem_dep_food, family_dep_income = dmem_dep_fin, #change factors!
+                       education = dedu, write_bangla = dletterb, write_english = dlettere, years_anyGarment = dy_garment, 
+                       years_currjob = dy_currjob, years_intendedFut = dy_exp, income_spouse = dsp_inc, monthly_overtime = dinc_over, 
+                       ladr_respect = dresp_comm, ladr_currStatus = dcurr_status, ladr_futStatus = dfut_status, 
+                       ladr_pastStatus = dpast_status, factory, advice = dadvice, salary = salamount)
+```
+
+```{r, results='asis', echo=FALSE}
+stargazer(baseline_mSD, type="html", flip = TRUE)
+```
+
+\
+[back to table of contents](#TOC)
 
 #basic demographics
 ##gender
@@ -43,6 +63,9 @@ No surprises here:
 ```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
 plot_percent(baseline, "dreligion") #religion
 ```
+
+\
+[back to table of contents](#TOC)
 
 #family status
 ##children
@@ -77,6 +100,9 @@ plot_hist(baseline, "dmem_dep_food") #fam dependent on food
 plot_hist(baseline, "dmem_dep_fin") #fam dependent on income
 ```
 
+\
+[back to table of contents](#TOC)
+
 #credentials
 ##education
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
@@ -102,6 +128,8 @@ Years intended to work in the future. Majority of respondents intend to work 1-6
 ```{r, echo=FALSE, fig.width=11.5, fig.height=3, cache=TRUE}
 plot_percent(baseline, "dy_exp", coordflippin = T) #how many more years intended to work
 ```
+\
+[back to table of contents](#TOC)
 
 #income
 
@@ -137,6 +165,9 @@ plot_percent(baseline, "dinc_over", coordflippin = T) #monthly overtime earnings
 plot_percent2(baseline, "dinc_over", "gender", coordflippin = T) #by gender
 ```
 
+\
+[back to table of contents](#TOC)
+
 #10-step ladder
 The following section has questions based on the 10 step ladder; the first being the worst and the tenth being the best. 
 
@@ -164,6 +195,9 @@ And most feel things significantly improved:
 plot_percent(baseline, "dpast_status", coordflippin = T) #where you were in life 5 years ago  
 ```
 
+\
+[back to table of contents](#TOC)
+
 #misc
 ##factory
 ```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
@@ -175,6 +209,8 @@ plot_percent(baseline, "factory") #factory
 plot_hist(baseline, "dadvice") #people come to you for advice
 ```
 
+\
+[back to table of contents](#TOC)
 
 
 

@@ -1,0 +1,147 @@
+---
+title: "Follow-up 1 Data: Consumption"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow-up 1/in_process_data/cleaned_followup1.RDS")
+```
+
+#food consumption
+
+Most spend between 1-2K monthly on rice (top) and meat (bottom):
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "fcrice", coordflippin = T) 
+```
+
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "fcmeat", coordflippin = T) 
+```
+
+Sugar, tea and coffee, other food and drink consumed outside the house, special goods such as sweets, packaged snacks, soft drinks etc:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "fcspice", coordflippin = T) 
+```
+
+**Most eat fish/meat more than once a day** (original question was how many times in last 30 days?):
+
+```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
+plot_hist(followup, "fctimes_meat")
+```
+
+\
+[back to table of contents](#TOC)
+
+#non-food consumption
+
+##rent
+**Most spend as much as they do on rice as they do on rent**:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consrent", coordflippin = T) 
+```
+
+Noteworthy that **women spend more in nearly each tranche than do men**:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent2(followup, "nf_consrent", "gender", coordflippin = T)
+```
+
+##transportation/communication
+
+Transportation costs for work:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_constrans_w", coordflippin = T) 
+```
+
+to visit family/friends: 
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_constrans_fam", coordflippin = T) 
+```
+
+phone expenses:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consphone", coordflippin = T) 
+```
+
+##education
+
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consedu", coordflippin = T) 
+```
+
+##health
+
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_conshealth", coordflippin = T) 
+```
+
+##entertainment
+
+very few respondents spent much, if anything, on non-festival related gifts:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consgifts", coordflippin = T) 
+```
+
+likewise on non-festival related entertainment (anything music, meals outside at restaurant, cinema, books etc):
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consentertain", coordflippin = T) 
+```
+
+increase in spending for ceremonies and festivals:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consfestiv", coordflippin = T) 
+```
+
+##misc
+
+Seems like a very broad category! Clothes, shoes, jeweley, cosmetics, soap, toiletry products etc.:
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "nf_consclothes", coordflippin = T) 
+```
+
+Apart from all of the above, only 8% of respondents made any purchases that cost more than 1000 Thaka in the last month:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "durmore_1000")
+```
+
+of those 8%, those purchases fell under:
+```{r, echo=FALSE, fig.width=15, fig.height=4, warning=FALSE, cache=TRUE}
+plot_percent(followup, "durdurables1", coordflippin = T)
+```
+
+\
+[back to table of contents](#TOC)
+
+```{r, eval=FALSE}    
+#sugested variables to keep:
+"fcrice"
+"fcmeat"
+"fcspice"
+"fctimes_meat"
+"nf_consrent"
+"nf_constrans_w"
+"nf_constrans_fam"
+"nf_consphone"          
+"nf_consedu"           
+"nf_conshealth"         
+"nf_consgifts"          
+"nf_consentertain"
+"nf_consfestiv"         
+"nf_consclothes"  
+"durmore_1000"         
+"durdurables1" 
+```
+
+
+\
+[back to table of contents](#TOC)
+
+
+

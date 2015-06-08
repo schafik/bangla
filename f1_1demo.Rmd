@@ -1,0 +1,124 @@
+---
+title: "Follow-up 1 Data: Demographics"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow-up 1/in_process_data/cleaned_followup1.RDS")
+```
+
+#means and SDs
+for numeric variables
+```{r, echo=FALSE}
+followup_mSD <- select(followup, 
+            children = dchild_n, child_D = dchild_D)
+```
+
+```{r, results='asis', echo=FALSE}
+stargazer(followup_mSD, type="html", flip = F)
+```
+
+\
+[back to table of contents](#TOC)
+
+#basic demographics
+##gender
+
+```{r echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "gender")
+```
+
+11% of respondents' gender was reported to be wrong. As a reference point, 17% of people's names and factory line were reported to be wrong:
+
+```{r echo = FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "idconf_gender")
+```
+
+Of the 11%, more Females (previously labeled as males) correcting their gender. Interesting that this was the opposite in the baseline. 
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "identer_gender")
+```
+
+
+#family status
+
+##mariage
+7 in 10 are married: 
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "dmarried") 
+```
+
+Of the unmarried, most never were: 
+```{r, echo=FALSE, fig.width=11, fig.height=2.75, cache=T}
+plot_percent(followup, "dot_marr", coordflippin = T)
+```     
+
+If married, 35% of people have spouse that works in same factory:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "dsp_garm") 
+```
+
+##children
+
+7/10 of respondents have kids, 1.5 on average:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=T}
+plot_percent(followup, "dchild") 
+plot_hist(followup, "dchild_n")
+```
+
+Noteworthy that not as many children living with parent in Dhaka:
+```{r, echo=FALSE, fig.width=6, fig.height=3.5, warning=FALSE, cache=TRUE}
+plot_hist(followup, "dchild_D")
+```
+
+\
+[back to table of contents](#TOC)
+
+
+#income
+
+**We only have 44 respondents for income!** 
+
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+plot_percent(followup, "am_inc1", coordflippin = T) 
+```
+
+Only **2 percent of people have any income from another source** in past 30 days:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(followup, "iot_income")
+```
+
+Of those 2 percent, main source is subletting:
+```{r, echo=FALSE, fig.width=13, fig.height=3, cache=TRUE}
+plot_percent(followup, "iwhat_inc1", coordflippin = T) 
+```
+
+\
+[back to table of contents](#TOC)
+
+```{r, eval=FALSE}
+#sugested variables to keep:
+"factory"             
+"gender"
+"dmarried"            
+"dot_marr"
+"dsp_garm"
+"dchild"               
+"dchild_n"            
+"dchild_D"   
+"iot_income"   
+```
+
+\
+[back to table of contents](#TOC)
+
+
