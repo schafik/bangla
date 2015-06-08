@@ -37,7 +37,7 @@ plot_percent(followup, "sgrange_sav", coordflippin = T)
 plot_percent(followup, "sgam_sav_sp", coordflippin = T)
 ```
 
-large right skew of savings distribution, with 17K being the average:
+large right skew of savings distribution, with **17K being the average**:
 ```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
 ggplot(cheddar, aes(x=overall_savings)) + 
       geom_histogram(colour="black", fill = "#F0E442", binwidth = 100000) + 
@@ -50,7 +50,7 @@ ggplot(cheddar, aes(x=overall_savings)) +
 
 
 #ladder
-How good do you feel at saving? (Step 1 is really bad Step 10 is excellent):
+How good do you feel at saving? For the actual savings figures, we see some optimism/hopefulness from respondents (Step 1 is really bad Step 10 is excellent)
 ```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
 plot_percent(followup, "sgachi_goal_gen", coordflippin = T)
 ```
@@ -59,7 +59,7 @@ plot_percent(followup, "sgachi_goal_gen", coordflippin = T)
 [back to table of contents](#TOC)
 
 #formal savings
-Do you have savings set aside in any of the following account (in your name, in your children's name or jointly in  your name and somebody else's name)? **Most choose DPS accounts***
+Do you have savings set aside in any of the following account (in your name, in your children's name or jointly in  your name and somebody else's name)? **Most choose DPS accounts**
 ```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
 plot_percent(followup, "nfe_for1", coordflippin = T)
 ```
@@ -70,7 +70,7 @@ plot_percent(followup, "bal_for_acc1", coordflippin = T)
 ```
 
 Informal savings accounts: 
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=15, fig.height=3, warning=FALSE, cache=TRUE}
 plot_percent(followup, "nfe_info1", coordflippin = T)
 ```
 

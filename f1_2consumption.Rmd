@@ -106,13 +106,13 @@ Seems like a very broad category! Clothes, shoes, jeweley, cosmetics, soap, toil
 plot_percent(followup, "nf_consclothes", coordflippin = T) 
 ```
 
-Apart from all of the above, only 8% of respondents made any purchases that cost more than 1000 Thaka in the last month:
+Apart from all of the above, **only 8% of respondents made any purchases that cost more than 1000 Thaka in the last month**:
 ```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
 plot_percent(followup, "durmore_1000")
 ```
 
 of those 8%, those purchases fell under:
-```{r, echo=FALSE, fig.width=15, fig.height=4, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=15, fig.height=5, warning=FALSE, cache=TRUE}
 plot_percent(followup, "durdurables1", coordflippin = T)
 ```
 
