@@ -70,7 +70,7 @@ plot_percent(followup, "bal_for_acc1", coordflippin = T)
 ```
 
 Informal savings accounts: 
-```{r, echo=FALSE, fig.width=15, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=17, fig.height=3, warning=FALSE, cache=TRUE}
 plot_percent(followup, "nfe_info1", coordflippin = T)
 ```
 
