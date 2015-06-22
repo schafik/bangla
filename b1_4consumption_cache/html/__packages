@@ -1,0 +1,9 @@
+base
+foreign
+readr
+stringr
+dplyr
+ggplot2
+stargazer
+knitr
+reshape2

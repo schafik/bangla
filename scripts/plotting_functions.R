@@ -67,3 +67,12 @@ plot_hist <- function(df, var, mean = T) {
     ggplot(df, aes_string(x=var)) + 
       geom_histogram(colour="black", fill = "#F0E442", binwidth = 1)}
 }
+
+
+create_NA <- function(var) {
+  facts <- c(make.unique(levels(factor(var))), "NA")  
+  factor(ifelse(!is.na(var), var, "NA"), levels = facts)
+}
+
+
+

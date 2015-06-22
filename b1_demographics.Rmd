@@ -200,19 +200,55 @@ plot_percent(baseline, "dpast_status", coordflippin = T) #where you were in life
 
 #misc
 ##factory
-```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
 plot_percent(baseline, "factory") #factory
 ```
 
 ##advice
-```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+```{r, echo=FALSE, fig.width=4, fig.height=2.75, cache=TRUE}
 plot_hist(baseline, "dadvice") #people come to you for advice
 ```
 
 \
 [back to table of contents](#TOC)
 
+#accomodation
 
+##housing arrangement
+please describe your living arrangement in Dhaka:
 
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "hhou_D", coordflippin = T) 
+```
 
+how many rooms hometown accomodation has?
+```{r, echo=FALSE, fig.width=2.5, fig.height=3.75, cache=TRUE}
+plot_hist(baseline, "hn_rooms") 
+```
+
+##rent per month 
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "hrent_D", coordflippin = T) 
+```
+
+does it include food/utlities/other?
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "hrent_incl_yn") 
+```
+
+###how to represent?
+```{r}
+#which of the following amenities does your accommodation in Dhaka have?
+ #hamen_D1:hamen_D5
+table(baseline$hamen_D1)
+```
+
+```{r}
+#which of the following amenities does your hometown accommodation have? 
+  #hamen_vill1:hamen_vill5
+table(baseline$hamen_vill1)
+```
+
+\
+[back to table of contents](#TOC)
 

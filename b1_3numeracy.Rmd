@@ -1,0 +1,178 @@
+---
+title: "Baseline Data: Numeracy + Financial Literacy/Capability"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
+```
+
+#numeracy
+
+**yes == correctly answered**
+
+8 tasks.... titration switch occurs from 4=>5
+```{r, echo=FALSE}
+table(baseline$nummem1)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem2)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem3)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem4)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem5)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem6)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem7)
+```
+
+```{r, echo=FALSE}
+table(baseline$nummem8)
+```
+
+\
+[back to table of contents](#TOC)
+
+
+#financial literacy
+
+suppose you had 100 Taka in a savings account and the interest rate was 2% per year. After 1 year, how much do you think you would have in the account if you left the money to grow?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "flitfin_lit1", coordflippin = T)
+```
+
+suppose you saved 100 Taka at a bank and you get 2% interest at the end of each month. If you kept your money in the bank for two months, how much money would you have?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "flitfin_lit2", coordflippin = T)
+```
+
+
+suppose you need to borrow 100 Taka. You have two choices. The first choice is you have to pay back 110 Taka in 1 month. The second choice is you have to pay back 100 Taka plus 15 percent in one month. Which is the better deal for you?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "flitfin_lit3", coordflippin = T)
+```
+
+is it safer to put all your savings into one business or investment, or to put your savings into multiple businesses or investments?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "flitfin_lit4", coordflippin = T)
+```
+
+
+imagine that the interest rate on your savings account was 5% per year and the inflation rate was 7% per year. After one year, how much would you be able to buy with the money in the account?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "flitfin_lit5", coordflippin = T)
+```
+
+
+\
+[back to table of contents](#TOC)
+
+#financial capability
+
+how often do you know roughly what will be your expenses next month? 
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapexp_next", coordflippin = T)
+```
+
+do you procrastinate tasks like saving?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcappostp", coordflippin = T)
+```
+
+do you have trouble saying no to requests for financial help from others?
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcaprequests", coordflippin = T)
+```
+
+do you keep your money in a place far away so that you can't get to it or use it?
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapmon_away", coordflippin = T)
+```
+
+
+do you have trouble staying within financial plans that you make?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapfin_plans", coordflippin = T)
+```
+
+
+do you give in to temptations to spend money on fun and pleasure for yourself and your family?      
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcaptempt", coordflippin = T)
+```
+
+are you concerned about not having enough money to pay your normal monthly bills?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapenough", coordflippin = T)
+```
+
+are you concerned about not having enough money to fulfill the needs of family members who depend on your income?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapenough_fam", coordflippin = T)
+```
+
+are you concerned about not having enough money to repay money you have borrowed?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapenough_repay", coordflippin = T)
+```
+
+if you had a health emergency that urgently required an amount of money equal to what you earn or receive in a typical month, where would you get the money from?
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcaphealth", coordflippin = T)
+```
+
+in the last 12 months, were there days when you didn't have food to fulfill the needs of your family?
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapnomon_food", coordflippin = F)
+```
+
+in the last 12 months, how many times did you have to borrow money at the end of the month because your salary was not sufficient to fulfill your needs or the needs of your family?
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapborr_end", coordflippin = T)
+```
+
+
+in the last 12 months, did you or any other adults in your household cut the size of your meals or skip meals because there were not enough money for food?
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapcut_meals", coordflippin = F)
+```
+
+
+\
+[back to table of contents](#TOC)

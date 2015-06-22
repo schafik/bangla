@@ -1,0 +1,190 @@
+---
+title: "Baseline Data: Owned Assets"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
+```
+
+Please tell me if  your household in Dhaka owns any of the following items:
+
+#eletronics 
+
+##radios
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_radio")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnradios")
+```
+
+##TVs
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_tv")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asntv")
+```
+
+##video/DVD
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_video")
+```
+
+##mobile phones
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_mobile")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnmobile")
+```
+
+##computers
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_pc")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnpc")
+```
+
+\
+[back to table of contents](#TOC)
+
+#sewing machines                      
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_sewing")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnsewing")
+```
+
+#fans
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_fan")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnfan")
+```
+
+#kerosene lamps
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_keros")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnkerosene")
+```
+
+\
+[back to table of contents](#TOC)
+
+
+#cooking 
+
+##stoves
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_stove")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnstove")
+```
+
+##pots
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_pot")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnpot")
+```
+
+##fridge
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_fridge")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnfridge")
+```
+\
+[back to table of contents](#TOC)
+
+
+#irons
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_iron")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asniron")
+```
+
+#mosquito nets
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_net")
+```
+those that do have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnnets")
+```
+
+#generator
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_gener")
+```
+those that do **(8)** have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asngenerator")
+```
+
+\
+[back to table of contents](#TOC)
+
+
+#transportation
+
+##bike
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_bike")
+```
+those that do **(8)** have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnbike")
+```
+
+##motorbikes
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_motor")
+```
+those that do **(2)** have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnmotor")
+```
+
+##other motor vehicles
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "ashas_otherm")
+```
+those that do **(2)** have:
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_hist(baseline, "asnotherm")
+```
+
+

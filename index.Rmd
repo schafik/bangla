@@ -11,12 +11,11 @@ output:
 ### Baseline Survey
 
  * [Demographics](http://schafik.github.io/bangla/b1_demographics.html)
- * accomodation
- * assets
- * consumption + expenses
+ * [Numeracy + Financial Literacy/Capability](http://schafik.github.io/bangla/b1_3numeracy.html)
+ * [Assets](http://schafik.github.io/bangla/b1_2assets.html)
+ * [Consumption](http://schafik.github.io/bangla/b1_4consumption.html) 
  * savings
  * credit
- * general numeracy (probably belongs in demographics?)
  * remittances
  * risk + time preferences 
  * trust + altruism (probably belongs in demographics?)

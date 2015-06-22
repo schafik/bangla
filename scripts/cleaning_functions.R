@@ -31,3 +31,47 @@ consump_bins <- function(x) {
 }
 
 
+rent_bins <- function(x) {
+  x <- ifelse(!(x %in% c(1:8)), NA, x)
+  x <- ifelse(x == 1, "less than 2000 Taka/month",
+       ifelse(x == 2, "between 2000 and 2500 Taka/month",
+       ifelse(x == 3, "between 2500 and 3000 Taka/month",
+       ifelse(x == 4, "between 3000 and 3500 Taka/month",
+       ifelse(x == 5, "between 3500 and 4000 Taka/month",      
+       ifelse(x == 6, "between 4000 and 4500 Taka/month",      
+       ifelse(x == 7, "between 4500 and 5000 Taka/month",      
+       ifelse(x == 8, "more than or equal to 5000 Taka/month", NA))))))))
+  x <- factor(x, levels=c("less than 2000 Taka/month", "between 2000 and 2500 Taka/month",
+                          "between 2500 and 3000 Taka/month", "between 3000 and 3500 Taka/month",
+                          "between 3500 and 4000 Taka/month", "between 4000 and 4500 Taka/month",
+                          "between 4500 and 5000 Taka/month", "more than or equal to 5000 Taka/month"))
+}
+
+consump_priority <- function(x) {
+  x <- ifelse(!(x %in% c(1:18)), NA, x)
+  x <- ifelse(x == 1, "Education related costs", 
+       ifelse(x == 2, "Health related costs",
+       ifelse(x == 3, "Rent",
+       ifelse(x == 4, "Food or Bills such as gas, electricity, water",
+       ifelse(x == 5, "Enjoyment and personal expenditures",
+       ifelse(x == 6, "Clothes, shoes, jewelery",
+       ifelse(x == 7, "Household assets (fan, refrigerator, mattress,furniture)",
+       ifelse(x == 8, "Vehicle purchase, maintenance and repair",
+       ifelse(x == 9, "Home construction, improvement, renovation",
+       ifelse(x == 10, "Investment to make money",
+       ifelse(x == 11, "Investment to buy land or house",
+       ifelse(x == 12, "Pay off loan or settle debt",
+       ifelse(x == 13, "Gifts for another person or organization",
+       ifelse(x == 14, "Weddings, funerals, religious functions",
+       ifelse(x == 15, "Saving for emergencies",
+       ifelse(x == 16, "Saving for an investment in physical assets or education",
+       ifelse(x == 17, "None",
+       ifelse(x == 18, "Other", NA))))))))))))))))))
+  x <- factor(x, levels=c("Education related costs", "Health related costs", "Rent", "Food or Bills such as gas, electricity, water",
+                          "Enjoyment and personal expenditures", "Clothes, shoes, jewelery", 
+                          "Household assets (fan, refrigerator, mattress,furniture)", "Vehicle purchase, maintenance and repair", 
+                          "Home construction, improvement, renovation", "Investment to make money",
+                          "Investment to buy land or house", "Pay off loan or settle debt", 
+                          "Gifts for another person or organization", "Weddings, funerals, religious functions",
+                          "Saving for emergencies", "Saving for an investment in physical assets or education", "None", "Other"))
+}

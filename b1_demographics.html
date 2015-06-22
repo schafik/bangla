@@ -63,7 +63,7 @@ img {
 
 <div id="header">
 <h1 class="title">Baseline Data: Demographics</h1>
-<h4 class="date"><em>Updated 07 June, 2015</em></h4>
+<h4 class="date"><em>Updated 22 June, 2015</em></h4>
 </div>
 
 <div id="TOC">
@@ -94,6 +94,12 @@ img {
 <li><a href="#misc">misc</a><ul>
 <li><a href="#factory">factory</a></li>
 <li><a href="#advice">advice</a></li>
+</ul></li>
+<li><a href="#accomodation">accomodation</a><ul>
+<li><a href="#housing-arrangement">housing arrangement</a></li>
+<li><a href="#rent-per-month">rent per month</a><ul>
+<li><a href="#how-to-represent">how to represent?</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -392,9 +398,48 @@ Max
 </div>
 <div id="advice" class="section level2">
 <h2>advice</h2>
-<p><img src="b1_demographics_files/figure-html/unnamed-chunk-26-1.png" title="" alt="" width="240" /></p>
+<p><img src="b1_demographics_files/figure-html/unnamed-chunk-26-1.png" title="" alt="" width="384" /></p>
 <p><br />
 <a href="#TOC">back to table of contents</a></p>
+</div>
+</div>
+<div id="accomodation" class="section level1">
+<h1>accomodation</h1>
+<div id="housing-arrangement" class="section level2">
+<h2>housing arrangement</h2>
+<p>please describe your living arrangement in Dhaka:</p>
+<p><img src="b1_demographics_files/figure-html/unnamed-chunk-27-1.png" title="" alt="" width="1344" /></p>
+<p>how many rooms hometown accomodation has? <img src="b1_demographics_files/figure-html/unnamed-chunk-28-1.png" title="" alt="" width="240" /></p>
+</div>
+<div id="rent-per-month" class="section level2">
+<h2>rent per month</h2>
+<p><img src="b1_demographics_files/figure-html/unnamed-chunk-29-1.png" title="" alt="" width="1344" /></p>
+<p>does it include food/utlities/other? <img src="b1_demographics_files/figure-html/unnamed-chunk-30-1.png" title="" alt="" width="240" /></p>
+<div id="how-to-represent" class="section level3">
+<h3>how to represent?</h3>
+<pre class="r"><code>#which of the following amenities does your accommodation in Dhaka have?
+ #hamen_D1:hamen_D5
+table(baseline$hamen_D1)</code></pre>
+<pre><code>## 
+##       Refused to answer             Electricity Indoor cooking facility 
+##                       0                    2096                       1 
+##           Running water           Indoor toilet          Gas connection 
+##                       4                       0                       0 
+##       None of the above              Don&#39;t know 
+##                       2                       0</code></pre>
+<pre class="r"><code>#which of the following amenities does your hometown accommodation have? 
+  #hamen_vill1:hamen_vill5
+table(baseline$hamen_vill1)</code></pre>
+<pre><code>## 
+##       Refused to answer             Electricity Indoor cooking facility 
+##                       2                    1053                      71 
+##           Running water           Indoor toilet          Gas connection 
+##                     849                       0                       0 
+##       None of the above              Don&#39;t know 
+##                     121                       0</code></pre>
+<p><br />
+<a href="#TOC">back to table of contents</a></p>
+</div>
 </div>
 </div>
 

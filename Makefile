@@ -2,6 +2,12 @@ all: *.html
 
 b1_demographics.html: b1_demographics.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_demographics.Rmd')" | R --no-save 
+b1_2assets.html: b1_2assets.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_2assets.Rmd')" | R --no-save 
+b1_3numeracy.html: b1_3numeracy.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_3numeracy.Rmd')" | R --no-save 
+b1_4consumption.html: b1_4consumption.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_4consumption.Rmd')" | R --no-save 
 f1_1demo.html: f1_1demo.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('f1_1demo.Rmd')" | R --no-save 
 f1_2consumption.html: f1_2consumption.Rmd
