@@ -75,3 +75,29 @@ consump_priority <- function(x) {
                           "Gifts for another person or organization", "Weddings, funerals, religious functions",
                           "Saving for emergencies", "Saving for an investment in physical assets or education", "None", "Other"))
 }
+
+
+account_bins <- function(x) {
+  x <- ifelse(!(x %in% c(1:13)), NA, x)
+  x <- ifelse(x == 1, "BANK ACCOUNTS - CURRENT", 
+       ifelse(x == 2, "BANK ACCOUNTS - SAVINGS",
+       ifelse(x == 3, "DPS ACCOUNTS",
+       ifelse(x == 4, "OTHER FIXED DEPOSIT ACCOUNTS",
+       ifelse(x == 5, "INSURANCE SAVING PRODUCTS",
+       ifelse(x == 6, "ISLAMIC BANK ACCOUNTS - CURRENT",
+       ifelse(x == 7, "ISLAMIC ACCOUNTS - SAVINGS",
+       ifelse(x == 8, "ISLAMIC FIXED DEPOSIT ACCOUNTS",
+       ifelse(x == 9, "ISLAMIC INSURANCE SAVINGS PRODUCTS",
+       ifelse(x == 10, "MOBILE ACCOUNTS",
+       ifelse(x == 11, "POST OFFICE ACCOUNTS",
+       ifelse(x == 12, "ACCOUNTS AT A MICROFINANCE INSTITUTION",
+       ifelse(x == 13, "OTHER TYPE OF FORMAL ACCOUNTS",
+       ifelse(x == 14, "None of the above", NA))))))))))))))
+  x <- factor(x, levels=c("BANK ACCOUNTS - CURRENT", "BANK ACCOUNTS - SAVINGS",
+                "DPS ACCOUNTS", "OTHER FIXED DEPOSIT ACCOUNTS", "INSURANCE SAVING PRODUCTS",
+                "ISLAMIC BANK ACCOUNTS - CURRENT", "ISLAMIC ACCOUNTS - SAVINGS",
+                "ISLAMIC FIXED DEPOSIT ACCOUNTS", "ISLAMIC INSURANCE SAVINGS PRODUCTS",
+                "MOBILE ACCOUNTS", "POST OFFICE ACCOUNTS", "ACCOUNTS AT A MICROFINANCE INSTITUTION",
+                "OTHER TYPE OF FORMAL ACCOUNTS", "None of the above"))
+
+}

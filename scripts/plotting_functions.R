@@ -71,7 +71,7 @@ plot_hist <- function(df, var, mean = T) {
 
 create_NA <- function(var) {
   facts <- c(make.unique(levels(factor(var))), "NA")  
-  factor(ifelse(!is.na(var), var, "NA"), levels = facts)
+  factor(ifelse((!is.na(var)), var, "NA"), levels = facts)
 }
 
 

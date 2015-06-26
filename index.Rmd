@@ -14,14 +14,10 @@ output:
  * [Numeracy + Financial Literacy/Capability](http://schafik.github.io/bangla/b1_3numeracy.html)
  * [Assets](http://schafik.github.io/bangla/b1_2assets.html)
  * [Consumption](http://schafik.github.io/bangla/b1_4consumption.html) 
- * savings
- * credit
- * remittances
- * risk + time preferences 
- * trust + altruism (probably belongs in demographics?)
- * financial literacy/capability
- * locus of control 
- * work satisfaction 
+ * [Savings](http://schafik.github.io/bangla/b1_5savings.html)
+ * [Credit](http://schafik.github.io/bangla/b1_6credit.html)
+ * [Remittances](http://schafik.github.io/bangla/b1_7remit.html)
+ * [Psych Measures](http://schafik.github.io/bangla/b1_8psych.html) 
 
 
 ### Follow up 1

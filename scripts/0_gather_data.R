@@ -25,7 +25,8 @@ baseline <- baseline %>% #assigning value to baseline dataframe
              c_prbig_withdr = consump_priority(c_prbig_withdr),
              c_pr2given_money1 = consump_priority(c_pr2given_money1),
              c_pr2given_money2 = consump_priority(c_pr2given_money2),
-             c_pr2given_money3 = consump_priority(c_pr2given_money3)) 
+             acc_type_for1 = account_bins(acc_type_for1))
+#              c_pr2given_money3 = consump_priority(c_pr2given_money3)) 
 #              hrent_incl = ifelse(!is.na(hrent_incl3), "food + utilities + other",
 #                           ifelse(is.na(hrent_incl3) & !is.na(hrent_incl2), paste0(hrent_incl1, hrent_incl2),
 #                                  hrent_incl1)),

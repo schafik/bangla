@@ -1,0 +1,86 @@
+
+---
+title: "Baseline Data: Remittances"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
+```
+
+
+
+#remittances
+"r_srem_s_past6"       "r_srem_am_s_past6"    "r_sn_recipients"      "r_sn_receipients"    
+"r_sr_s_rep_count"     "num_mem_s1"           "mem_s_name1"          "mem_s_age1"          
+"mem_s_residence1"     "s_num_transfpast6_1"  "s_size_transfpast6_1" "s_way_transfpast6_1" 
+"s_num_receipast6_1"   "s_size_receipast6_1"  "s_way_receipast6_1"   "s_num_next9_1"       
+"s_size_next9_1"       "s_num_recnext9_1"     "s_size_recnext9_1"    "num_mem_s2"          
+"mem_s_name2"          "mem_s_age2"           "mem_s_residence2"     "s_num_transfpast6_2" 
+"s_size_transfpast6_2" "s_way_transfpast6_2"  "s_num_receipast6_2"   "s_size_receipast6_2" 
+"s_way_receipast6_2"   "s_num_next9_2"        "s_size_next9_2"       "s_num_recnext9_2"    
+"s_size_recnext9_2"    "num_mem_s3"           "mem_s_name3"          "mem_s_age3"          
+"mem_s_residence3"     "s_num_transfpast6_3"  "s_size_transfpast6_3" "s_way_transfpast6_3" 
+"s_num_receipast6_3"   "s_size_receipast6_3"  "s_way_receipast6_3"   "s_num_next9_3"       
+"s_size_next9_3"       "s_num_recnext9_3"     "s_size_recnext9_3"    "num_mem_s4"          
+"mem_s_name4"          "mem_s_age4"           "mem_s_residence4"     "s_num_transfpast6_4" 
+"s_size_transfpast6_4" "s_way_transfpast6_4"  "s_num_receipast6_4"   "s_size_receipast6_4" 
+"s_way_receipast6_4"   "s_num_next9_4"        "s_size_next9_4"       "s_num_recnext9_4"    
+"s_size_recnext9_4"    "num_mem_s5"           "mem_s_name5"          "mem_s_age5"          
+"mem_s_residence5"     "s_num_transfpast6_5"  "s_size_transfpast6_5" "s_way_transfpast6_5" 
+"s_num_receipast6_5"   "s_size_receipast6_5"  "s_way_receipast6_5"   "s_num_next9_5"       
+"s_size_next9_5"       "s_num_recnext9_5"     "s_size_recnext9_5"    "num_mem_s6"          
+"mem_s_name6"          "mem_s_age6"           "mem_s_residence6"     "s_num_transfpast6_6" 
+"s_size_transfpast6_6" "s_way_transfpast6_6"  "s_num_receipast6_6"   "s_size_receipast6_6" 
+"s_way_receipast6_6"   "s_num_next9_6"        "s_size_next9_6"       "s_num_recnext9_6"    
+"s_size_recnext9_6"    "num_mem_s7"           "mem_s_name7"          "mem_s_age7"          
+"mem_s_residence7"     "s_num_transfpast6_7"  "s_size_transfpast6_7" "s_way_transfpast6_7" 
+"s_num_receipast6_7"   "s_size_receipast6_7"  "s_way_receipast6_7"   "s_num_next9_7"       
+"s_size_next9_7"       "s_num_recnext9_7"     "s_size_recnext9_7"    "r_rrem_r_past6"      
+"r_rrem_am_r_past6"    "r_rn_senders"         "r_rr_r_rep_count"     "num_mem_r1"          
+"ment_rost1_1"         "mem_r_name1"          "mem_r_age1"           "mem_r_residence1"    
+"r_num_receipast6_1"   "r_size_receipast6_1"  "r_way_receipast6_1"   "r_num_transfpast6_1" 
+"r_size_transfpast6_1" "r_way_transfpast6_1"  "r_num_next9_1"        "r_size_next9_1"      
+"r_num_recnext9_1"     "r_size_recnext9_1"    "num_mem_r2"           "ment_rost1_2"        
+"mem_r_name2"          "mem_r_age2"           "mem_r_residence2"     "r_num_receipast6_2"  
+"r_size_receipast6_2"  "r_way_receipast6_2"   "r_num_transfpast6_2"  "r_size_transfpast6_2"
+"r_way_transfpast6_2"  "r_num_next9_2"        "r_size_next9_2"       "r_num_recnext9_2"    
+"r_size_recnext9_2"    "num_mem_r3"           "ment_rost1_3"         "mem_r_name3"         
+"mem_r_age3"           "mem_r_residence3"     "r_num_receipast6_3"   "r_size_receipast6_3" 
+"r_way_receipast6_3"   "r_num_transfpast6_3"  "r_size_transfpast6_3" "r_way_transfpast6_3" 
+"r_num_next9_3"        "r_size_next9_3"       "r_num_recnext9_3"     "r_size_recnext9_3"   
+"num_mem_r4"           "ment_rost1_4"         "mem_r_name4"          "mem_r_age4"          
+"mem_r_residence4"     "r_num_receipast6_4"   "r_size_receipast6_4"  "r_way_receipast6_4"  
+"r_num_transfpast6_4"  "r_size_transfpast6_4" "r_way_transfpast6_4"  "r_num_next9_4"       
+"r_size_next9_4"       "r_num_recnext9_4"     "r_size_recnext9_4"    "num_mem_r5"          
+"ment_rost1_5"         "mem_r_name5"          "mem_r_age5"           "mem_r_residence5"    
+"r_num_receipast6_5"   "r_size_receipast6_5"  "r_way_receipast6_5"   "r_num_transfpast6_5" 
+"r_size_transfpast6_5" "r_way_transfpast6_5"  "r_num_next9_5"        "r_size_next9_5"      
+"r_num_recnext9_5"     "r_size_recnext9_5"    "ever_trans_mob"       "ever_recei_mob"      
+"remit_tools1"         "remit_tools2"         "remit_tools3"         "remit_tools4"        
+"remit_tools5"         "remit_tools6"         
+
+
+
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapborr_end", coordflippin = T)
+```
+
+
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapcut_meals", coordflippin = F)
+```
+
+
+\
+[back to table of contents](#TOC)

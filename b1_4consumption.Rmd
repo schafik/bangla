@@ -141,7 +141,7 @@ plot_percent(baseline, "blelse_services")
 ```
 
 other
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
 plot_percent(baseline, "blelse_other")
 ```
    
@@ -265,12 +265,12 @@ stargazer(select(baseline,hhehh_other), type = "html", flip=T)
 
 ##biggest expense
 in the last 2 years, what was the single biggest expense you have had to make at one time?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=5, cache=TRUE}
 plot_percent(baseline, "c_prbig_exp", coordflippin = T)
 ```
 
 amount:
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=5, cache=TRUE}
 plot_percent(baseline, "c_pram_big_exp", coordflippin = T)
 table(baseline$c_pram_big_exp, useNA = 'ifany')
 ```

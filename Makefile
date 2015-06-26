@@ -8,6 +8,14 @@ b1_3numeracy.html: b1_3numeracy.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_3numeracy.Rmd')" | R --no-save 
 b1_4consumption.html: b1_4consumption.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_4consumption.Rmd')" | R --no-save 
+b1_5savings.html: b1_5savings.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_5savings.Rmd')" | R --no-save 
+b1_6credit.html: b1_6credit.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_6credit.Rmd')" | R --no-save 
+b1_7remit.html: b1_7remit.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_7remit.Rmd')" | R --no-save 
+b1_8psych.html: b1_8psych.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_8psych.Rmd')" | R --no-save 
 f1_1demo.html: f1_1demo.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('f1_1demo.Rmd')" | R --no-save 
 f1_2consumption.html: f1_2consumption.Rmd

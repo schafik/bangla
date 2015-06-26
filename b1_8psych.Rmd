@@ -1,0 +1,49 @@
+
+---
+title: "Baseline Data: Psych Measures"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
+```
+
+#risk + time preferences
+"r_prrisk_fin"         "r_prrisk_all"        
+"r_prlottery1"         "r_prlottery2"         "r_prlottery3"         "r_prlottery4"        
+"r_prlottery5"         "r_prlottery6"         "t_prtime_pref1"       "t_prtime_pref2"      
+"t_prtime_pref3"       "t_prtime_pref4"       "t_prtime_pref5"       "t_prtime_pref6"      
+"t_prpatience"         
+#trust and altruism
+"trualtr_500"          "trutrust1"            "trutrust2"           
+"trutrust3"            
+#locus of control
+"locprobl"            
+"locmisf"              "loccontr"             "locluck"              "locmanage"           
+#work satisfaction
+"wsoverall_sat"        "wswage_sat"           "wscond_sat"           "wsbenefits_sat"      
+"wsrecommend"          "metainstanceID" 
+
+
+
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapborr_end", coordflippin = T)
+```
+
+
+
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "fcapcut_meals", coordflippin = F)
+```
+
+
+\
+[back to table of contents](#TOC)
