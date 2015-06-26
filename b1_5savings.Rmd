@@ -39,7 +39,7 @@ hist(exact$sgam_sav, main = "exact savings")
 ```
 
 How much savings does your spouse currently have? Please include all savings and money set away in formal accounts, informal accounts, money saved in your spouse's name in Dhaka or your place of origin.
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
 plot_percent(baseline, "sgam_sav_sp", coordflippin = T)
 ```
 
@@ -53,7 +53,7 @@ plot_percent(baseline, "sgstart_job_save")
 ```
 
 How much money did you plan to set aside or save (~550 NAs)?
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
 plot_percent(baseline, "sgam_plan_save", coordflippin = T)
 ```
 

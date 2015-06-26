@@ -16,34 +16,138 @@ source("/git_repositories/bangla/scripts/plotting_functions.R")
 baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.RDS")
 ```
 
-#risk + time preferences
-"r_prrisk_fin"         "r_prrisk_all"        
-"r_prlottery1"         "r_prlottery2"         "r_prlottery3"         "r_prlottery4"        
-"r_prlottery5"         "r_prlottery6"         "t_prtime_pref1"       "t_prtime_pref2"      
-"t_prtime_pref3"       "t_prtime_pref4"       "t_prtime_pref5"       "t_prtime_pref6"      
-"t_prpatience"         
+#risk preferences
+
+##10 step ladder
+In financial matters, are you generally a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”
+"r_prrisk_fin"       
+
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prrisk_fin", coordflippin = F)
+```
+
+Overall, are you a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prrisk_all", coordflippin = F)
+```
+      
+      
+\
+[back to table of contents](#TOC)
+
+##lottery
+
+6 tradeoffs, win 100 T if head everytime. If tails, lose:
+
+10 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery1", coordflippin = F)
+```
+
+20 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery2", coordflippin = F)
+```
+
+30 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery3", coordflippin = F)
+```
+
+40 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery4", coordflippin = F)
+```
+
+50 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery5", coordflippin = F)
+```
+
+60 T
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "r_prlottery6", coordflippin = F)
+```
+
+\
+[back to table of contents](#TOC)
+
+#time prefeences
+
+##smaller sooner vs larger later
+6 tradeoffs, 20 T now or...
+
+30 T in one month:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref1", coordflippin = F)
+```
+
+60 T in one month:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref2", coordflippin = F)
+```
+
+30 T in two months:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref3", coordflippin = F)
+```
+
+60 T in two months:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref4", coordflippin = F)
+```
+
+30 T in four months:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref5", coordflippin = F)
+```
+
+60 T in four months:
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+plot_percent(baseline, "t_prtime_pref6", coordflippin = F)
+```
+
+
+\
+[back to table of contents](#TOC)
+
+
+##10 step ladder
+
+Some people like to have everything now, other people are willing to wait. Now imagine that on the bottom step of this ladder, the first step, are the people who are not very patient, who almost always want to have things now, and 10 is the most patient, where you are almost always willing to wait.  Where do you stand?
+```{r, echo=FALSE, fig.width=11, fig.height=3, cache=TRUE}
+plot_percent(baseline, "t_prpatience", coordflippin = F)
+```
+
+
+\
+[back to table of contents](#TOC)
+
 #trust and altruism
-"trualtr_500"          "trutrust1"            "trutrust2"           
+```{r, eval=FALSE}
+"trualtr_500"          
+"trutrust1"
+"trutrust2"           
 "trutrust3"            
+```
+
 #locus of control
-"locprobl"            
-"locmisf"              "loccontr"             "locluck"              "locmanage"           
+```{r, eval=FALSE}
+"locprobl"          
+"locmisf"              
+"loccontr"
+"locluck"
+"locmanage"           
+```
+
 #work satisfaction
-"wsoverall_sat"        "wswage_sat"           "wscond_sat"           "wsbenefits_sat"      
-"wsrecommend"          "metainstanceID" 
-
-
-
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
-plot_percent(baseline, "fcapborr_end", coordflippin = T)
+```{r, eval=FALSE}
+"wsoverall_sat"        
+"wswage_sat"           
+"wscond_sat"           
+"wsbenefits_sat"      
+"wsrecommend"          
 ```
-
-
-
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
-plot_percent(baseline, "fcapcut_meals", coordflippin = F)
-```
-
 
 \
 [back to table of contents](#TOC)
