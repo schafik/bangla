@@ -9,8 +9,11 @@ baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline
 
 followup1 <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow-up 1/raw_data/raw_followup1.RDS")
 
-# followup2 <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/") #todo: resolve with Maura
+# followup2 <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Field Activities/09 Data_for_PIs (no PII)/Round 1/follow-up2_1st_round_cleaned_wtreat_12.dta") 
 
+#followup3 <- readRDS()
+
+#followup4 <- readRDS()
 
 #cleaning of variables###########################################################
 
@@ -33,7 +36,7 @@ baseline <- baseline %>% #assigning value to baseline dataframe
 #              hrent_incl = str_trim(str_replace_all(hrent_incl, "Rent includes", ""), side = "both"),
 #              hrent_incl = ifelse(hrent_incl == 3, hrent_incl1, hrent_incl))
 
-#follow up 1 + 2???#
+#follow up 1#
 followup1 <- followup1 %>%
   mutate(gender = tolower(ifelse(gender %in% c("", "SREE"), NA, #recoding gender variable
                                  ifelse(gender == "ma", "male", gender))),
