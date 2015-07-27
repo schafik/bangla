@@ -9,6 +9,7 @@ output:
     theme: spacelab
     self_contained: no
 ---
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
@@ -71,13 +72,13 @@ baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline
 
 
 
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "fcapborr_end", coordflippin = T)
 ```
 
 
 
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "fcapcut_meals", coordflippin = F)
 ```
 

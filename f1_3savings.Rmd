@@ -12,7 +12,7 @@ output:
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
 source("/git_repositories/bangla/scripts/plotting_functions.R")
-followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow-up 1/in_process_data/cleaned_followup1.RDS")
+followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow_up/in_process_data/cleaned_followup.RDS")
 ```
 
 #means and SDs
@@ -32,13 +32,13 @@ stargazer(cheddar, type="html", flip = T)
 #overall savings
 
 more than half of people do no have any savings (top) and even less their spouses (bottom):
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "sgrange_sav", coordflippin = T)
 plot_percent(followup, "sgam_sav_sp", coordflippin = T)
 ```
 
 large right skew of savings distribution, with **17K being the average**:
-```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=7, fig.height=4, cache=FALSE}
 ggplot(cheddar, aes(x=overall_savings)) + 
       geom_histogram(colour="black", fill = "#F0E442", binwidth = 100000) + 
   geom_vline(aes(xintercept=mean(overall_savings, na.rm=T)),   
@@ -51,7 +51,7 @@ ggplot(cheddar, aes(x=overall_savings)) +
 
 #ladder
 How good do you feel at saving? For the actual savings figures, we see some optimism/hopefulness from respondents (Step 1 is really bad Step 10 is excellent)
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "sgachi_goal_gen", coordflippin = T)
 ```
 
@@ -60,22 +60,22 @@ plot_percent(followup, "sgachi_goal_gen", coordflippin = T)
 
 #formal savings
 Do you have savings set aside in any of the following account (in your name, in your children's name or jointly in  your name and somebody else's name)? **Most choose DPS accounts**
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "nfe_for1", coordflippin = T)
 ```
 
 of the **529 respondents with formal accounts**, here is the breakdown of balances:
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "bal_for_acc1", coordflippin = T)
 ```
 
 Informal savings accounts: 
-```{r, echo=FALSE, fig.width=17, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=17, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "nfe_info1", coordflippin = T)
 ```
 
 of the **395 respondents with informal accounts**, here is breakdown of balances: 
-```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3, warning=FALSE, cache=FALSE}
 plot_percent(followup, "balance_info_acc1", coordflippin = T)
 ```
 

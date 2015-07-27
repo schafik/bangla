@@ -99,5 +99,43 @@ account_bins <- function(x) {
                 "ISLAMIC FIXED DEPOSIT ACCOUNTS", "ISLAMIC INSURANCE SAVINGS PRODUCTS",
                 "MOBILE ACCOUNTS", "POST OFFICE ACCOUNTS", "ACCOUNTS AT A MICROFINANCE INSTITUTION",
                 "OTHER TYPE OF FORMAL ACCOUNTS", "None of the above"))
-
 }
+
+salary_bins <- function(x) {
+  x <- ifelse(!(x %in% c(1:15)), NA, x)
+  x <- ifelse(x == 1, "no salary",
+       ifelse(x == 2, "less than 5000 Taka",
+       ifelse(x == 3, "between 5000 and 5500 Taka",
+       ifelse(x == 4, "between 5500 and 6000 Taka",
+       ifelse(x == 5, "between 6000 and 6500 Taka",      
+       ifelse(x == 6, "between 6500 and 7000 Taka",
+       ifelse(x == 7, "between 7000 and 7500 Taka",
+       ifelse(x == 8, "between 7500 and 8000 Taka",
+       ifelse(x == 9, "between 8000 and 8500 Taka",
+       ifelse(x == 10, "between 8500 and 9000 Taka",
+       ifelse(x == 11, "between 9000 and 9500 Taka",
+       ifelse(x == 12, "between 9500 and 10000 Taka",
+       ifelse(x == 13, "between 10000 and 12000 Taka",
+       ifelse(x == 14, "between 12000 and 15000 Taka", 
+       ifelse(x == 15, "between 15000 and 17000 Taka",
+       ifelse(x == 16, "between 17000 and 20000 Taka",              
+       ifelse(x == 17, "between 20000 and 25000 Taka", 
+       ifelse(x == 18, "between 25000 and 30000 Taka", 
+       ifelse(x == 19, "more than 30000", NA)))))))))))))))))))
+  x <- factor(x, levels=c("no salary", "less than 5000 Taka", "between 5000 and 5500 Taka", 
+                          "between 5500 and 6000 Taka", "between 6000 and 6500 Taka",
+                          "between 6500 and 7000 Taka", "between 7500 and 8000 Taka",
+                          "between 8000 and 8500 Taka", "between 8500 and 9000 Taka",
+                          "between 9000 and 9500 Taka", "between 9500 and 10000 Taka", 
+                          "between 10000 and 12000 Taka", "between 12000 and 15000 Taka", 
+                          "between 15000 and 17000 Taka", "between 17000 and 20000 Taka", 
+                          "between 20000 and 25000 Taka", "between 25000 and 30000 Taka",
+                          "more than 30000"))
+}
+
+
+
+
+
+
+

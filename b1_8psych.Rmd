@@ -9,6 +9,7 @@ output:
     theme: spacelab
     self_contained: no
 ---
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
@@ -19,15 +20,14 @@ baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline
 #risk preferences
 
 ##10 step ladder
-In financial matters, are you generally a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”
-"r_prrisk_fin"       
+**In financial matters**, are you generally a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”      
 
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prrisk_fin", coordflippin = F)
 ```
 
-Overall, are you a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+**Overall**, are you a person who is fully prepared to take risks or do you try to avoid taking risks? Please answer on the scale from one to ten, where the value 1 means “not at all willing to take risks” and the value 10 means “very willing to take risks.”
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prrisk_all", coordflippin = F)
 ```
       
@@ -37,73 +37,77 @@ plot_percent(baseline, "r_prrisk_all", coordflippin = F)
 
 ##lottery
 
-6 tradeoffs, win 100 T if head everytime. If tails, lose:
+6 tradeoffs, **win 100 Taka if heads everytime**. If tails, lose the varying amounts. Would you take gamble?
 
 10 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
-plot_percent(baseline, "r_prlottery1", coordflippin = F)
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
+plot_percent(filter(baseline, r_prlottery1 != "Refused to answer"), 
+             "r_prlottery1", coordflippin = F)
 ```
 
 20 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prlottery2", coordflippin = F)
 ```
 
 30 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prlottery3", coordflippin = F)
 ```
 
 40 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prlottery4", coordflippin = F)
 ```
 
 50 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prlottery5", coordflippin = F)
 ```
 
 60 T
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "r_prlottery6", coordflippin = F)
 ```
+
+
+clearly a misunderstood question!
 
 \
 [back to table of contents](#TOC)
 
-#time prefeences
+#time preferences
 
 ##smaller sooner vs larger later
-6 tradeoffs, 20 T now or...
+**6 tradeoffs**:
 
 30 T in one month:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref1", coordflippin = F)
 ```
 
 60 T in one month:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref2", coordflippin = F)
 ```
 
 30 T in two months:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref3", coordflippin = F)
 ```
 
 60 T in two months:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref4", coordflippin = F)
 ```
 
 30 T in four months:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref5", coordflippin = F)
 ```
 
 60 T in four months:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "t_prtime_pref6", coordflippin = F)
 ```
 
@@ -115,7 +119,7 @@ plot_percent(baseline, "t_prtime_pref6", coordflippin = F)
 ##10 step ladder
 
 Some people like to have everything now, other people are willing to wait. Now imagine that on the bottom step of this ladder, the first step, are the people who are not very patient, who almost always want to have things now, and 10 is the most patient, where you are almost always willing to wait.  Where do you stand?
-```{r, echo=FALSE, fig.width=11, fig.height=3, cache=TRUE}
+```{r, echo=FALSE, fig.width=11, fig.height=3, cache=FALSE}
 plot_percent(baseline, "t_prpatience", coordflippin = F)
 ```
 
@@ -124,12 +128,30 @@ plot_percent(baseline, "t_prpatience", coordflippin = F)
 [back to table of contents](#TOC)
 
 #trust and altruism
-```{r, eval=FALSE}
-"trualtr_500"          
-"trutrust1"
-"trutrust2"           
-"trutrust3"            
+
+if you just won 500 Taka, would you...
+```{r, echo=FALSE, fig.width=14, fig.height=5, cache=FALSE}
+plot_percent(baseline, "trualtr_500", coordflippin = T)
 ```
+
+
+In general one can trust people, do you agree or disagree?
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
+plot_percent(baseline, "trutrust1", coordflippin = T)
+```
+
+
+These days you cannot rely on anybody else, do you agree or disagree?
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
+plot_percent(baseline, "trutrust2", coordflippin = T)    
+```
+
+
+When dealing with strangers, it is better to be careful before you trust them, do you agree or disagree?
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
+plot_percent(baseline, "trutrust3", coordflippin = T)
+```
+
 
 #locus of control
 ```{r, eval=FALSE}

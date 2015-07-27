@@ -9,6 +9,7 @@ output:
     theme: spacelab
     self_contained: no
 ---
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
@@ -19,17 +20,17 @@ baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline
 
 #loans: overview
 Do you currently have any loans outstanding? By loans I mean any amount money borrowed from a bank, employer, moneylender, family member or credit association, credit purchase, or any other money you owe back.
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "crhas_loans", coordflippin = F)
 ```
 
 What is the total amount of the loans you currently have outstanding including the amount of the interest (~1300 NAs)?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "crtot_loans", coordflippin = T)
 ```
 
 Compared to one year ago, is the loan amount that you currently owe __? (~1300 NAs)
-```{r, echo=FALSE, fig.width=3, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3, fig.height=4, cache=FALSE}
 plot_percent(baseline, "crcurram_loan", coordflippin = F)
 ```
 
@@ -40,7 +41,7 @@ plot_percent(baseline, "crcurram_loan", coordflippin = F)
 ##10 step ladder
 
 Thinking about the amount of money that you borrowed from friends, family or taken as a loan from a bank, moneylender or other source. To what extent do you and your spouse agree on the amount of money you decide to borrow?  Step 1 is disagree completely. Step 10 is agree completely. (~1500 NAs)
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
 plot_percent(baseline, "cragree_sp_loans", coordflippin = F)
 ```
 
@@ -52,60 +53,60 @@ plot_percent(baseline, "cragree_sp_loans", coordflippin = F)
 
 ##main loan
 Which of the following types of loans you have outstanding? 
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "nfe_loan1", coordflippin = T)
 ```
 
 What is the main purpose of the loan? (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "purp_loan1", coordflippin = T)
 ```
 
 Was this a planned expense? (~1300 NAs)
-```{r, echo=FALSE, fig.width=4, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=4, fig.height=4, cache=FALSE}
 plot_percent(baseline, "plan_exp_loan1", coordflippin = F)
 ```
 
 What was the amount of the loan at disbursement? (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "amount_loan1", coordflippin = T)
 ```
 
 Who was the recipient of the loan. By recipient I mean the person who makes decisions about how the money is used? (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "recipient_loan1", coordflippin = T)
 ```
 
 What is the amount of principal that you still have to repay?  (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "repay_loan1", coordflippin = T)
 ```
 
 What is the total number of payments? 
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_hist(baseline, "num_paym_loan1")
 summary(baseline$num_paym_loan1)
 ```
 
 What is the number of payments remaining?
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_hist(baseline, "n_paym_left_loan1")
 summary(baseline$n_paym_left_loan1)
 ```
 
 
 What is the frequency of payments? (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "freq_paym_loan1", coordflippin = T)
 ```
 
 What is the size of each payment? (~1300 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "size_paym_loan1", coordflippin = T)
 ```
 
 Was the loan taken jointly with your spouse (if married) or another family member?  (~1300 NAs)
-```{r, echo=FALSE, fig.width=3, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3, fig.height=4, cache=FALSE}
 plot_percent(baseline, "loan_jointly1", coordflippin = F)
 ```
 
@@ -116,112 +117,112 @@ plot_percent(baseline, "loan_jointly1", coordflippin = F)
 ##secondary loan
 
 Which of the following types of loans you have outstanding? 
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "nfe_loan2", coordflippin = T)
 ```
 
 What is the main purpose of the loan? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "purp_loan2", coordflippin = T)
 ```
 
 Was this a planned expense? (~1900 NAs)
-```{r, echo=FALSE, fig.width=4, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=4, fig.height=4, cache=FALSE}
 plot_percent(baseline, "plan_exp_loan2", coordflippin = F)
 ```
 
 What was the amount of the loan at disbursement? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "amount_loan2", coordflippin = T)
 ```
 
 Who was the recipient of the loan. By recipient I mean the person who makes decisions about how the money is used? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "recipient_loan2", coordflippin = T)
 ```
 
 What is the amount of principal that you still have to repay? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "repay_loan2", coordflippin = T)
 ```
 
 What is the total number of payments? 
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_hist(baseline, "num_paym_loan2")
 summary(baseline$num_paym_loan2)
 ```
 
 What is the number of payments remaining?
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_hist(baseline, "n_paym_left_loan2")
 summary(baseline$n_paym_left_loan2)
 ```
 
 
 What is the frequency of payments? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "freq_paym_loan2", coordflippin = T)
 ```
 
 What is the size of each payment? (~1900 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "size_paym_loan2", coordflippin = T)
 ```
 
 Was the loan taken jointly with your spouse (if married) or another family member?  (~1900 NAs)
-```{r, echo=FALSE, fig.width=3, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3, fig.height=4, cache=FALSE}
 plot_percent(baseline, "loan_jointly2", coordflippin = F)
 ```
 
 #loans: other information
 
 Did you try to borrow from any of the following sources in the past 12 months but were turned down?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lloan_ref1", coordflippin = T)
 ```
 
 How worried are you about not being able to repay money you (and your spouse if married) have borrowed? (~1300 NAs)
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lworry_repay", coordflippin = F)
 ```
 
 ##new loans
 Do you (or your spouse, if married) plan to take any new loans in the next 12 months?
-```{r, echo=FALSE, fig.width=9, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=9, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_ln_loans_plan", coordflippin = F)
 ```
 
 If so, what is the total amount you plan to borrow over the next 12 months? (~1950 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lam_plan", coordflippin = T)
 ```
 
 If so, for what purpose do you plan to take loans?  (~1950 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lpurp_plan", coordflippin = T)
 ```
 
 If so, for whom do you plan to borrow, i.e. who are the recipients? By recipient I mean the person who will use/benefit from the money that will be borrowed.  (~1950 NAs)
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lrecip_plan", coordflippin = T)
 ```
 
 ##employer loans
 
 In the last 12 months, have you taken any salary advance from your employer?
-```{r, echo=FALSE, fig.width=3, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lsalary_adv", coordflippin = F)
 table(baseline$in_lsalary_adv, useNA = 'ifany')
 ```
 
  
 If so, how many times (months) have you taken a salary advance from your employer during the last 12 months?
-```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=7, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_lfreq_sal_adv", coordflippin = F)
 ```
 
 If so, for what purpose did you take the advance?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "in_ladv_purp", coordflippin = T)
 ```
 

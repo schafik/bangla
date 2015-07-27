@@ -12,7 +12,7 @@ output:
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
 source("/git_repositories/bangla/scripts/plotting_functions.R")
-followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow-up 1/in_process_data/cleaned_followup1.RDS")
+followup <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow_up/in_process_data/cleaned_followup.RDS")
 ```
 
 #means and SDs
@@ -29,7 +29,7 @@ stargazer(followup_mSD, type="html", flip = T)
 
 ##number
 **Over 1/2 respondents do not have any loans**:
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(followup, "l_outlo_rep_count")
 ```
 
@@ -66,14 +66,14 @@ plot_percent(followup, "am_loan_out2", coordflippin = T)
 #remittances
 
 **3/4 of respondents have sent money to friends/family** over the last month who do not live in household:
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(followup, "rem_sentrem_s")
 ```
 
 ##number
 
 The number of people remittances were sent to from respondent over the past month:
-```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=7, fig.height=4, cache=FALSE}
 plot_hist(followup, "rem_sentn_receipients")
 ```
 
@@ -87,7 +87,7 @@ plot_percent(followup, "rem_senttot_am_s", coordflippin = T)
 ##to other members of household
 
 Most respondents have not transfered moneys to another member of the same household:
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(followup, "rem_senthhtr_s")
 ```
 

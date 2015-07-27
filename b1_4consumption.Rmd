@@ -8,6 +8,7 @@ output:
     theme: spacelab
     self_contained: no
 ---
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
@@ -34,37 +35,37 @@ baseline <- baseline %>%
 
 do you feel obligated to turn over a part of your income to your spouse or another family member?
 
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "cinc_share", coordflippin = F)
 ```
 
 how much as a percentage do you turn over?
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE, warning=FALSE}
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE, warning=FALSE}
 plot_percent(baseline, "cper_inc_share", coordflippin = T)
 ```
 
 does your spouse or other family member turn over part of his or her income to you?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "cinc_from_sp", coordflippin = F)
 ```
 
 who is responsible for budgeting the household income? 
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "cmem_budget", coordflippin = T)
 ```
 
 in your household, who controls spending decisions for food and everyday expenses?
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "ccontr_food", coordflippin = T)
 ```
 
 in your household, who controls spending decisions for special goods (sweets, meals out, movies, entertainment etc.)?
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "ccontr_special", coordflippin = T)
 ```
 
 in your household, who controls spending decisions for larger purchases?
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "ccontr_large", coordflippin = T)
 ```
 
@@ -78,37 +79,37 @@ plot_percent(baseline, "ccontr_large", coordflippin = T)
 thinking about the 5 days after you receive your salary, what part of your wage do you spend on the following items? 
 
 payment of rent:
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5pay_rent")
 ```
 
 payment of bills (electricity, water, phone, cable etc.):
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5pay_bills")
 ```
 
 payment of school fees
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5pay_school")
 ```        
 
 repayment of loans and interest
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5pay_loans")
 ```        
 
 money given to spouse/household/family members in Dhaka
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5money_sporfam")
 ```        
 
 money sent to family members in village home/place of origin
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5money_sent")
 ```        
 
 money left for spending on everything else
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "b5money_else")
 ```        
 
@@ -121,27 +122,27 @@ plot_percent(baseline, "b5money_else")
 thinking of the part of your wage that is left over for spending on everything else, how do you allocate this amount between the following items? 
 
 on food
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "blelse_food")
 ```
 
 special goods (mobile phone credit, entertainment, movies, books etc.) for yourself
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "blelse_special")
 ```
 
 savings
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "blelse_saving")
 ```
       
 spending on services (healthcare, haircuts,etc.)      
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "blelse_services") 
 ```
 
 other
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "blelse_other")
 ```
    
@@ -154,7 +155,7 @@ how much does your household spend on an average month on the following items? p
 
 ##rent
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehhpay_rent")
 ```
 
@@ -165,7 +166,7 @@ stargazer(select(baseline,hhehhpay_rent), type = "html", flip=T)
 ##bills 
 electricity, water, phone, cable etc.
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehhpay_bills")
 ```
 
@@ -175,7 +176,7 @@ stargazer(select(baseline,hhehhpay_bills), type = "html", flip=T)
 
 ##school fees
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehhpay_school")
 ```
 
@@ -185,7 +186,7 @@ stargazer(select(baseline,hhehhpay_school), type = "html", flip=T)
 
 ##repayment of loans and interest
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehhpay_loans")
 ```
 
@@ -201,7 +202,7 @@ stargazer(select(baseline,hhehhmoney_fam), type = "html", flip=T)
 
 ##money sent to family members in village home/place of origin
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehhmoney_sent")
 ```
 
@@ -211,7 +212,7 @@ stargazer(select(baseline,hhehhmoney_sent), type = "html", flip=T)
 
 ##food    
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehh_food")
 ```
 
@@ -222,7 +223,7 @@ stargazer(select(baseline,hhehh_food), type = "html", flip=T)
 ##special goods
 mobile phone credit, entertainment, movies, books etc.
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehh_special")
 ```
 
@@ -232,7 +233,7 @@ stargazer(select(baseline,hhehh_special), type = "html", flip=T)
 
 ##savings
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehh_saving")
 ```
 
@@ -243,7 +244,7 @@ stargazer(select(baseline,hhehh_saving), type = "html", flip=T)
 ##services
 healthcare, haircuts, etc.
 
-```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=3.5, fig.height=4, cache=FALSE}
 plot_hist(baseline, "hhehh_services")
 ```
 
@@ -265,12 +266,12 @@ stargazer(select(baseline,hhehh_other), type = "html", flip=T)
 
 ##biggest expense
 in the last 2 years, what was the single biggest expense you have had to make at one time?
-```{r, echo=FALSE, fig.width=13, fig.height=5, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=5, cache=FALSE}
 plot_percent(baseline, "c_prbig_exp", coordflippin = T)
 ```
 
 amount:
-```{r, echo=FALSE, fig.width=13, fig.height=5, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=5, cache=FALSE}
 plot_percent(baseline, "c_pram_big_exp", coordflippin = T)
 table(baseline$c_pram_big_exp, useNA = 'ifany')
 ```
@@ -278,12 +279,12 @@ table(baseline$c_pram_big_exp, useNA = 'ifany')
 ##biggest withdrawl
 
 what is the biggest withdrawal from your savings/money put away that you have made at one time over the last 2 years?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "c_prbig_withdr", coordflippin = T)
 ```
 
 amount:
-```{r, echo=FALSE, fig.width=13, fig.height=3.75, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=3.75, cache=FALSE}
 plot_percent(baseline, "c_pram_big_withdr", coordflippin = T)
 table(baseline$c_pram_big_withdr, useNA = 'ifany')
 ```

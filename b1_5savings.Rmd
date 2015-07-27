@@ -9,6 +9,7 @@ output:
     theme: spacelab
     self_contained: no
 ---
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #loading necessary packages, functions, and data
 source("/git_repositories/bangla/scripts/load_packages.R")
@@ -25,7 +26,7 @@ baseline <- baseline %>%
 
 #overall savings
 How much savings do you currently have? Please include all savings and money set away in formal accounts, informal accounts, money saved in your name in Dhaka or your place of origin. 
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgrange_sav", coordflippin = T)
 ```
 
@@ -34,12 +35,12 @@ Please enter **exact amount** of all savings set away in formal accounts, inform
 exact <- baseline %>% select(sgam_sav1:sgam_sav7) %>% mutate(sgam_sav = rowSums(., na.rm=T)) 
 stargazer(dplyr::select(exact, sgam_sav), type="html", flip = TRUE)
 ```
-```{r, echo=FALSE, fig.width=5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=5, fig.height=4, cache=FALSE}
 hist(exact$sgam_sav, main = "exact savings")
 ```
 
 How much savings does your spouse currently have? Please include all savings and money set away in formal accounts, informal accounts, money saved in your spouse's name in Dhaka or your place of origin.
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgam_sav_sp", coordflippin = T)
 ```
 
@@ -48,34 +49,34 @@ plot_percent(baseline, "sgam_sav_sp", coordflippin = T)
 
 #savings goals
 Did you start working in the garment industry with the goal to save or set aside a specific amount of money?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgstart_job_save")
 ```
 
 How much money did you plan to set aside or save (~550 NAs)?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgam_plan_save", coordflippin = T)
 ```
 
 ##10-step ladder
 Where on the ladder do you find yourself in relation to that savings goal.  Step 1 is really far from the goal.  Step 10 is reached the goal(~550 NAs):
-```{r, echo=FALSE, fig.width=7, fig.height=7, cache=TRUE}
+```{r, echo=FALSE, fig.width=7, fig.height=7, cache=FALSE}
 plot_percent(baseline, "sgachi_goal_save", coordflippin = F)
 ```
 
 To what extent do you and your spouse agree on the amount you save and invest? Step 1 is disagree completely. Step 10 is agree completely(~700 NAs):
-```{r, echo=FALSE, fig.width=7, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=7, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgagree_sav", coordflippin = F)
 ```
 
 ##habits
 Do you try to save or set aside a certain fraction of your wage every month?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgsave_month", coordflippin = F)
 ```
 
 How much do you anticipate saving across all vehicles in the next 12 months?         
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "sgam_save_12", coordflippin = T)
 ```
 
@@ -87,18 +88,18 @@ plot_percent(baseline, "sgam_save_12", coordflippin = T)
 ##concrete goals
 What is top goal (~650 NAs)?
 
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "nfe_goal1", coordflippin = T)
 ```
 
 How much does will it cost (~650 NAs)?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "goal_am1", coordflippin = T)
 ```
 
 How are you planning to save (~650 NAs)?
 
-```{r, echo=FALSE, fig.width=14, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=4, cache=FALSE}
 plot_percent(baseline, "goal_device1", coordflippin = T)
 ```
 
@@ -109,39 +110,39 @@ plot_percent(baseline, "goal_device1", coordflippin = T)
 
 Do you have savings set aside in any of the following accounts  (or jointly in  your name and somebody else's name) (~1450 NAs) 
 
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "acc_type_for1", coordflippin = T)
 ```
 
 How many do you to your name (~1500 NAs)?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 plot_percent(baseline, "n_f_acc1", coordflippin = F)
 ```
 
 
 What is your current balance across all accounts of this type (~1500 NAs)?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "bal_for_acc1", coordflippin = T)
 ```
 
 On average how often do you deposit or withdraw money from any account of this type (~1500 NAs)?
-```{r, echo=FALSE, fig.width=13, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=13, fig.height=4, cache=FALSE}
 plot_percent(baseline, "oper_for_acc1", coordflippin = T)
 ```
 
 ##spouse
 Is this money available to your spouse as well as you? (i.e. is the formal account joint?  Does the spouse have access to the funds?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 table(baseline$for_avail_sp1, useNA = 'ifany')
 ```
 
 Does your spouse have an account of this type aside from those accounts you already mentioned?
-```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=2.5, fig.height=4, cache=FALSE}
 table(baseline$for_only_sp1, useNA = 'ifany')
 ```     
 
 What is the reason for not having a bank account in your name (~1650 NAs)?
-```{r, echo=FALSE, fig.width=15, fig.height=4.5, cache=TRUE}
+```{r, echo=FALSE, fig.width=15, fig.height=4.5, cache=FALSE}
 plot_percent(baseline, "fswhy_not_b1", coordflippin = T)
 ```     
 
@@ -151,22 +152,22 @@ plot_percent(baseline, "fswhy_not_b1", coordflippin = T)
 
 #informal savings
 Since you don't have a bank account, what is the most common way for you to make a transaction (~1550 NAs)?
-```{r, echo=FALSE, fig.width=14, fig.height=3, cache=TRUE}
+```{r, echo=FALSE, fig.width=14, fig.height=3, cache=FALSE}
 plot_percent(baseline, "fsb_trans1", coordflippin = T)
 ```     
       
 In general do you use the following  methods for saving?
-```{r, echo=FALSE, fig.width=15, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=15, fig.height=4, cache=FALSE}
 plot_percent(baseline, "isacc_info_sav1", coordflippin = T)
 ```     
 
 If you needed to save 5000 Taka for a large expense over the next 6 months would you be able to do it?
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
 plot_percent(baseline, "need_5000", coordflippin = T)
 ```     
 
 Imagine that you had 3000 taka left over at the end of the month, and wanted to save it, without spending it, for 3 months. Would you be able to? 
-```{r, echo=FALSE, fig.width=11, fig.height=4, cache=TRUE}
+```{r, echo=FALSE, fig.width=11, fig.height=4, cache=FALSE}
 plot_percent(baseline, "poss_sav3", coordflippin = T)
 ```     
 
