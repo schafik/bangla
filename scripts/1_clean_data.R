@@ -102,7 +102,7 @@ followup <- followup %>%
          nf_consclothes = consump_bins(nf_consclothes))
 
 
-#writing out data################################################################
+#writing out data#################################################################################
 #CSV#
 write_csv(baseline, "~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/in_process_data/cleaned_baseline.csv")
 write_csv(followup, "~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow_up/in_process_data/cleaned_followup.csv")

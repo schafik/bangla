@@ -1,6 +1,6 @@
 all: *.html
 
-b1_demographics.html: b1_demographics.Rmd
+b1_demographics.html: b1_demographics.Rmd 
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_demographics.Rmd')" | R --no-save 
 b1_2assets.html: b1_2assets.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('b1_2assets.Rmd')" | R --no-save 

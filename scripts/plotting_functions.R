@@ -1,10 +1,10 @@
 
-plot_percent <- function(df, var, removeNAs = F, coordflippin = F) {
-  if (removeNAs == T){
+plot_percent <- function(df, var, removeNAs = T, coordflippin = F) {
+  if (removeNAs == F){
     yo <- df %>% group_by_(as.name(var)) %>% 
       summarize(tally = n()) #getting totals
     yo <- mutate(yo, percent = round(tally/sum(tally), digits=2))}  
-  else if (removeNAs == F){
+  else if (removeNAs == T){
     yo <- df %>% group_by_(as.name(var)) %>% 
       summarize(tally = n()) #getting totals
     yo <- na.omit(yo) #removing NAs
@@ -20,6 +20,7 @@ plot_percent <- function(df, var, removeNAs = F, coordflippin = F) {
       coord_flip() +
       geom_text(stat="identity", aes_string(label="percent", hjust = -.1))}
 }
+
 
 plot_percent2 <- function(df, var1, var2, removeNAs = F, 
                           coordflippin = F, percent = F) {
