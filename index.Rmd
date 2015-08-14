@@ -1,5 +1,5 @@
 ---
-title: "Bangladesh Factories"
+title: "Bangladesh Factories Project"
 output: 
   html_document:
     toc: no
@@ -8,9 +8,15 @@ output:
     self_contained: no
 ---
 
-### Baseline Survey
 
- * [Demographics](http://schafik.github.io/bangla/b1_demographics.html)
+###Standard Factory Follow Ups
+
+  * [Phone Survey](http://schafik.github.io/bangla/phone.html)
+
+```{r, echo=FALSE, eval=FALSE}
+#these sections will be updated shortly (when new variable name mapping process is completed):
+### Baseline Survey
+* [Demographics](http://schafik.github.io/bangla/b1_demographics.html)
  * [Numeracy + Financial Literacy/Capability](http://schafik.github.io/bangla/b1_3numeracy.html)
  * [Assets](http://schafik.github.io/bangla/b1_2assets.html)
  * [Consumption](http://schafik.github.io/bangla/b1_4consumption.html) 
@@ -19,12 +25,17 @@ output:
  * [Remittances](http://schafik.github.io/bangla/b1_7remit.html)
  * [Psych Measures](http://schafik.github.io/bangla/b1_8psych.html) 
 
-
 ### Follow up 1
  * [Demographics](http://schafik.github.io/bangla/f1_1demo.html)
  * [Consumption](http://schafik.github.io/bangla/f1_2consumption.html)
  * [Savings](http://schafik.github.io/bangla/f1_3savings.html)
  * [Loans + Remittances](http://schafik.github.io/bangla/f1_4loansremitt.html)
+```
+
+ 
+
+
+
  
 
  

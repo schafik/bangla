@@ -24,5 +24,7 @@ f1_3savings.html: f1_3savings.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('f1_3savings.Rmd')" | R --no-save 
 f1_4loansremitt.html: f1_4loansremitt.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('f1_4loansremitt.Rmd')" | R --no-save 
+phone.html: phone.Rmd
+	echo "require(knitr); require(rmarkdown); rmarkdown::render('phone.Rmd')" | R --no-save 
 index.html: index.Rmd
 	echo "require(knitr); require(rmarkdown); rmarkdown::render('index.Rmd')" | R --no-save 

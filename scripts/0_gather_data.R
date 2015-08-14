@@ -6,7 +6,8 @@ source("scripts/cleaning_functions.R")
 
 # baseline##############################################################################
 baseline <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/raw_data/raw_baseline.RDS") %>%
-                dplyr::filter(factory != "02") #dropping meek factory from data
+                dplyr::filter(factory != "02") #%>% #dropping meek factory from data
+#                 dplyr::filter(factory != "01") #dropping lazim factory from data
 
 #azim baseline###############################################################################
 azim9 <- read_csv("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/raw_data/azim/baseline_survey_final9_noPII.csv") %>%
@@ -27,27 +28,7 @@ names(azim9) <- str_replace_all(names(azim9), "-", "_") #cleaning colnames from 
 azim9_12 <- rbind.fill(azim9, azim10_12); remove(azim9, azim10_12)
 
 #cleaning colnames of azim to match other baseline#
-names(azim9_12) <- str_replace_all(names(azim9_12), "id_", "id")
-names(azim9_12) <- str_replace_all(names(azim9_12), "d_", "d")
-names(azim9_12) <- str_replace_all(names(azim9_12), "as_", "as")
-names(azim9_12) <- str_replace_all(names(azim9_12), "c_", "c")
-names(azim9_12) <- str_replace_all(names(azim9_12), "bl_", "bl")
-names(azim9_12) <- str_replace_all(names(azim9_12), "pr2_", "pr2")
-names(azim9_12) <- str_replace_all(names(azim9_12), "pr_", "pr")
-names(azim9_12) <- str_replace_all(names(azim9_12), "sg_", "sg")
-names(azim9_12) <- str_replace_all(names(azim9_12), "fs_", "fs")
-names(azim9_12) <- str_replace_all(names(azim9_12), "is_", "is")
-names(azim9_12) <- str_replace_all(names(azim9_12), "cr_", "cr")
-names(azim9_12) <- str_replace_all(names(azim9_12), "l_", "l")
-names(azim9_12) <- str_replace_all(names(azim9_12), "s_", "s")
-names(azim9_12) <- str_replace_all(names(azim9_12), "pr_", "pr")
-names(azim9_12) <- str_replace_all(names(azim9_12), "tru_", "tru")
-names(azim9_12) <- str_replace_all(names(azim9_12), "flit_", "flit")
-names(azim9_12) <- str_replace_all(names(azim9_12), "fcap_", "fcap")
-names(azim9_12) <- str_replace_all(names(azim9_12), "loc_", "loc")
-names(azim9_12) <- str_replace_all(names(azim9_12), "ws_", "ws")
-
-#consolidating baselines#####################################################################
+names(azim9_12) <- str_replace_all(names(azim9_12), "id_", "id"); names(azim9_12) <- str_replace_all(names(azim9_12), "d_", "d"); names(azim9_12) <- str_replace_all(names(azim9_12), "as_", "as"); names(azim9_12) <- str_replace_all(names(azim9_12), "c_", "c"); names(azim9_12) <- str_replace_all(names(azim9_12), "bl_", "bl"); names(azim9_12) <- str_replace_all(names(azim9_12), "pr2_", "pr2"); names(azim9_12) <- str_replace_all(names(azim9_12), "pr_", "pr"); names(azim9_12) <- str_replace_all(names(azim9_12), "sg_", "sg"); names(azim9_12) <- str_replace_all(names(azim9_12), "fs_", "fs"); names(azim9_12) <- str_replace_all(names(azim9_12), "is_", "is"); names(azim9_12) <- str_replace_all(names(azim9_12), "cr_", "cr"); names(azim9_12) <- str_replace_all(names(azim9_12), "l_", "l"); names(azim9_12) <- str_replace_all(names(azim9_12), "s_", "s"); names(azim9_12) <- str_replace_all(names(azim9_12), "pr_", "pr"); names(azim9_12) <- str_replace_all(names(azim9_12), "tru_", "tru"); names(azim9_12) <- str_replace_all(names(azim9_12), "flit_", "flit"); names(azim9_12) <- str_replace_all(names(azim9_12), "fcap_", "fcap"); names(azim9_12) <- str_replace_all(names(azim9_12), "loc_", "loc"); names(azim9_12) <- str_replace_all(names(azim9_12), "ws_", "ws")
 
 azim9_12 <- azim9_12 %>% mutate(
       SubmissionDate = mdy_hm(SubmissionDate), start = mdy_hm(start), end = mdy_hm(end)) %>%
@@ -78,9 +59,53 @@ azim9_12 <- azim9_12 %>% mutate(
                            ifelse(dot_marr == 2, "widowed",
                            ifelse(dot_marr == 3, "spouse left",
                            ifelse(dot_marr == 4, "never married", NA)))))
-#13 columns!?!?!?!?
-# thirteen <- read.dta("~/Dropbox/Bangladesh Projects/Factories _ EWP/Field Activities/09 Data_for_PIs (no PII)/Round 1/Azim_baseline_noPII.dta")
 
+#13 columns need to include for azim.....original data only had meta data and not meaningful values
+thirteen <- read_csv("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/baseline/raw_data/azim/AzimBaseline_wtreat_noPII.csv")        
+  names(thirteen) <- str_replace_all(names(thirteen), "id_", "id"); names(thirteen) <- str_replace_all(names(thirteen), "d_", "d"); names(thirteen) <- str_replace_all(names(thirteen), "as_", "as"); names(thirteen) <- str_replace_all(names(thirteen), "c_", "c"); names(thirteen) <- str_replace_all(names(thirteen), "bl_", "bl"); names(thirteen) <- str_replace_all(names(thirteen), "pr2_", "pr2"); names(thirteen) <- str_replace_all(names(thirteen), "pr_", "pr"); names(thirteen) <- str_replace_all(names(thirteen), "sg_", "sg"); names(thirteen) <- str_replace_all(names(thirteen), "fs_", "fs"); names(thirteen) <- str_replace_all(names(thirteen), "is_", "is"); names(thirteen) <- str_replace_all(names(thirteen), "cr_", "cr"); names(thirteen) <- str_replace_all(names(thirteen), "l_", "l"); names(thirteen) <- str_replace_all(names(thirteen), "s_", "s"); names(thirteen) <- str_replace_all(names(thirteen), "pr_", "pr"); names(thirteen) <- str_replace_all(names(thirteen), "tru_", "tru"); names(thirteen) <- str_replace_all(names(thirteen), "flit_", "flit"); names(thirteen) <- str_replace_all(names(thirteen), "fcap_", "fcap"); names(thirteen) <- str_replace_all(names(thirteen), "loc_", "loc"); names(thirteen) <- str_replace_all(names(thirteen), "ws_", "ws")
+
+#"d_mem_dep" *turn into dmem_dep1, dmem_dep2 etc.   
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "dep"))])
+    cols <- cols %>% select(resp_id, dmem_dep1:dmem_dep7); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"h_rent_incl" *turn into hrent_incl1, hrent_incl2 etc.          
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "rent"))])
+    cols <- cols %>% select(resp_id, hrent_incl1:hrent_incl3); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"h_amen_D" *turn into hamen_D1, hamen_D2 etc. 
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "hamen_D"))])
+    cols <- cols %>% select(resp_id, hamen_D1:hamen_D5); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"h_amen_vill" *turn into hamen_vill1, hamen_vill2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "amen_vi"))])
+    cols <- cols %>% select(resp_id, hamen_vill1:hamen_vill5); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"c_pr2_given_money" *turn into c_pr2given_money1, c_pr2given_money2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "given_"))])
+    cols <- cols %>% select(resp_id, cpr2given_money1:cpr2given_money3); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"sg_save_goals" *turn into sgsave_goals1, sgsave_goals2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "save_goa"))])
+    cols <- cols %>% select(resp_id, sgsave_goals1:sgsave_goals3); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"fsaccfor_sav" *turn into fsacc_for_sav1, fsacc_for_sav2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "accfor_sa"))])
+    cols <- cols %>% select(resp_id, fsaccfor_sav1:fsaccfor_sav2); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"fs_why_not_b" *turn into fswhy_not_b1, fswhy_not_b2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "why_not"))])
+    cols <- cols %>% select(resp_id, fswhy_not_b1:fswhy_not_b3); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"fsno_b_trans" *turn into fsno_b_trans1, fsno_b_trans2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "no_b_tr"))])
+    cols <- cols %>% select(resp_id, fsno_b_trans1:fsno_b_trans3); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"fsb_trans" *turn into fsb_trans1, fsb_trans2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "sb_trans"))])
+    cols <- cols %>% select(resp_id, fsb_trans1:fsb_trans2); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"isaccinfo_sav" *turn into isacc_info_sav1, isacc_info_sav2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "accinfo_sa"))])
+    cols <- cols %>% select(resp_id, isaccinfo_sav1:isaccinfo_sav2); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"in_lloan_ref" *turn into in_lloan_ref1, in_lloan_ref2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "lloan_ref"))])
+    cols <- cols %>% select(resp_id, in_lloan_ref1); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#"remit_tools" *turn into remit_tools1, remit_tools2 etc.
+  cols <- cbind(thirteen %>% select(resp_id), thirteen[, c(str_detect(names(thirteen), "remit_to"))])
+    cols <- cols %>% select(resp_id, remit_tools1:remit_tools5); azim9_12 <- left_join(azim9_12, cols, by = "resp_id")
+#TODO: look at equivalent variables in baseline
+
+#consolidating baselines###############################################################################
 #combining and writing out lazim/standard + azim#
 baseline <- rbind.fill(baseline, azim9_12); remove(azim9_12)
 

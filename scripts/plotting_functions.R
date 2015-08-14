@@ -54,8 +54,8 @@ plot_percent2 <- function(df, var1, var2, removeNAs = F,
 }
 
 
-plot_hist <- function(df, var, mean = T) {
-  if (mean == T){
+plot_hist <- function(df, var, mean = T, bin1 = T) {
+  if (mean == T & bin1 == T){
   numero <- df %>% #getting mean
       summarize_(promedio = mean(get(var, 
                   envir=as.environment(df)), na.rm = T))
@@ -64,9 +64,21 @@ plot_hist <- function(df, var, mean = T) {
     geom_histogram(colour="black", fill = "#F0E442", binwidth = 1) +
     geom_vline(aes_string(xintercept=numero),   
                color="black", linetype="dashed", size=.5)}
-  else if (mean == F){
+  else if (mean == T & bin1 == F){
+    numero <- df %>% #getting mean
+      summarize_(promedio = mean(get(var, 
+                                     envir=as.environment(df)), na.rm = T))
+    numero <- as.character(numero[[1]])
+    ggplot(df, aes_string(x=var)) + 
+      geom_histogram(colour="black", fill = "#F0E442") +
+      geom_vline(aes_string(xintercept=numero),   
+                 color="black", linetype="dashed", size=.5)}
+  else if (mean == F & bin1 == T){
     ggplot(df, aes_string(x=var)) + 
       geom_histogram(colour="black", fill = "#F0E442", binwidth = 1)}
+  else if (mean == F & bin1 == F){
+    ggplot(df, aes_string(x=var)) + 
+      geom_histogram(colour="black", fill = "#F0E442")}
 }
 
 

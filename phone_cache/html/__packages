@@ -1,0 +1,13 @@
+base
+foreign
+readr
+readxl
+stringr
+plyr
+dplyr
+ggplot2
+stargazer
+knitr
+reshape2
+lubridate
+GGally

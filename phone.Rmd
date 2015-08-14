@@ -1,0 +1,358 @@
+---
+title: "Phone Follow Up Data: Standard"
+date: "Updated `r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: yes
+    number_sections: no
+    theme: spacelab
+    self_contained: no
+---
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+#loading necessary packages, functions, and data
+source("/git_repositories/bangla/scripts/load_packages.R")
+source("/git_repositories/bangla/scripts/plotting_functions.R")
+phone <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/phone follow up/Phone_Fup_clean_08-11-15.RDS")
+follow_up <- readRDS("~/Dropbox/Bangladesh Projects/Factories _ EWP/Data/follow_up/in_process_data/cleaned_followup.RDS")
+
+```
+
+```{r, echo=FALSE}
+#for tranches
+mess_range <- c("none", "I live in a mess and pay for food with rent", "Don't know", "less than 500 Taka", 
+                "between 500 and 1000 Taka", "between 1000 and 2000 Taka", "between 2000 and 3000 Taka", 
+                "Between 3000 and 5000 Taka", "Between 5000  and 8000 Taka", "Between 8000  and 10000 Taka", 
+                "Between 10000 and 15000 Taka", "Between 15000 and 20000 Taka", "Between 25000  and 30000 taka", 
+                "between 30000 and 35000 taka", "between 35000 and 40000 taka", "between 40000 and 45000 taka", 
+                "between 45000 and 50000 taka", "more than 50000")
+exp_range <- c("none", "Don't know", "less than 500 Taka", "between 500 and 1000 Taka", 
+               "between 1000 and 2000 Taka", "between 2000 and 3000 Taka", "Between 3000 and 5000 Taka",
+               "Between 5000  and 8000 Taka", "Between 8000  and 10000 Taka", "Between 10000 and 15000 Taka", 
+               "Between 15000 and 20000 Taka", "Between 20000  and 25000 taka", "Between 25000  and 30000 taka",
+               "between 30000 and 35000 taka", "between 35000 and 40000 taka", "between 40000 and 45000 taka",
+               "between 45000 and 50000 taka", "more than 50000")
+sav_range <- c("Refused to answer", "Don't know", "None", "Less than 3000 Taka", "Between 3000 and 5000 Taka", 
+               "Between 5000  and 8000 Taka", "Between 8000  and 10000 Taka", "Between 10000 and 15000 Taka",
+               "Between 15000 and 20000 Taka","Between 20000  and 25000 taka", "Between 25000  and 30000 taka",
+               "between 30000 and 35000 taka", "between 35000 and 40000 taka", "between 40000 and 45000 taka",
+               "between 45000 and 50000 taka", "between 50000 and 70000 taka", "between 70000 and 90000 taka",
+               "between 90000 and 120000 taka", "between 120000 and 150000 taka", "more than 150000 taka")
+acc_bal <- c("Refused to answer", "Don’t know", "no money", "Less than 2500 Taka",
+             "Between 2500 and 5000 Taka", "Between 5000 and 10000 Taka", "Between 10000 and 15000 Taka",
+             "Between 15000 and 20000 Taka", "Between 20000 and 30000 Taka", "Between 30000 and 50000 Taka",
+             "between 50000 and 70000 taka", "between 70000 and 90000 taka", " between 90000 and 120000 taka",
+             "between 120000 and 150000 taka", "more than 150000 taka")
+loan_range <- c("Less than 500 Taka", "Between 500 and 1000 Taka",  "Between 1000 and 3000 Taka",
+                "Between 3000 and 5000 Taka", "Between 5000 and 10000 Taka",
+                "Between 10000 and 20000 Taka", "Between 20000 and 35000 taka",
+                "Between 35000 and 50000 Taka", "between 50000 and 70000 taka",
+                "between 70000 and 90000 taka", "between 90000 and 120000 taka", 
+                "between 120000 and 150000 taka", "more than 150000 taka", "Don't know")
+rem_range <- c("less than 500 Taka", "between 500 and 800 Taka", "between 800 and 1000 Taka",
+               "between 1000 and 2000 Taka", "between 2000 and 5000 Taka",
+               "between 5000 and 8000 Taka", "between 8000 and 10000 Taka",
+               "between 10000 and 15000 Taka", "between 15000 and 20000 Taka",
+               "between 20000 and 25000 Taka", "between 25000 and 30000 Taka",
+               "more than 30000", "Don't know")
+```
+
+####NOTE: the numbers on top of the bars in plots represent percentages
+
+#Food Consumption
+
+> how much you have spent from your income on basic food items for yourself or others over the past 30 days:
+
+####Rice, Lentils, pulses, cereals, Edible oils, Spices
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "fcrice", coordflippin = T) + scale_x_discrete(limits = mess_range)
+#table(phone$fcrice, useNA = 'ifany')
+```
+
+
+####Meat and fish, Milk, butter, eggs, paneer, ghee, Fruit and vegetables
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "fcmeat", coordflippin = T) + scale_x_discrete(limits = mess_range)
+```
+
+
+####Tea, coffee, Sugar, Other food and drink consumed outside the house, Special goods such as sweets, packaged snacks, soft drinks
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "fcspice", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+
+####How many times did you eat meat or fish in the last 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "fctimes_meat")
+summary(phone$fctimes_meat)
+```
+
+####How many times did you skip a meal for not having enough money in the last 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "fcmeals_skip") + scale_x_discrete(limits = c(1:7))
+summary(phone$fcmeals_skip)
+```
+
+\
+[back to table of contents](#TOC)
+
+
+
+
+#Non-Food Consumption
+
+> How much did you spend from your income in total for yourself and others on the following items over the past 30 days?
+
+####Rent and utilities  (individual or + spouse or other family in hh)
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_consrent", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####Transportation
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_constrans_all", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####Phone Credit
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_consphone", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####School fees, uniforms, or other educational expenses
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_consedu", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####Health care expenses: doctors, vaccines, medicines, hospital visits, haircuts
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_conshealth", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####(non festive) Clothes, shoes, jeweley, Cosmetics, soap, toiletry products 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_consclothes", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####Ceremonies and festivals
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nf_consfestiv", coordflippin = T) + scale_x_discrete(limits = exp_range)
+```
+
+####Other than what you have already mentioned, did you make any purchases that cost more than 1000 taka in the past 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "durmore_1000", coordflippin = T)
+```
+
+####What have you purchased in the past 30 days that cost more than 1000 taka?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "durdurables1", coordflippin = T)
+```
+  
+  + NAs?
+```{r, echo=FALSE}
+table(is.na(phone$durdurables1))
+```
+
+\
+[back to table of contents](#TOC)
+
+
+
+
+
+#Savings
+
+####How much savings do you currently have? Please include all savings and money set away in formal accounts, informal accounts, money saved in your name or together with spouse/other family members or friends in Dhaka or your place of origin.
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "sgrange_sav", coordflippin = T) + scale_x_discrete(limits = sav_range)
+```
+
+
+####Please enter exact amount of all savings set away in formal accounts, informal accounts, money saved in your name or together with spouse/other family members or friends in Dhaka or your place of origin.
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "sgam_sav", mean = T, bin1 = F)
+summary(phone$sgam_sav)
+```
+
+##formal savings
+
+####Number of Formal Savings account:
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "fsrep_f_count", mean = T, bin1 = T)
+summary(phone$fsrep_f_count)
+```
+
+####Do you have savings set aside in any of the following accounts (in your name, in your children's name or jointly in your name and somebody else's name)? 
+> account 1
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nfe_for1", coordflippin = T) 
+#table(phone$nfe_for1, useNA = "ifany")
+```
+   
+   + NA's?
+```{r, echo=FALSE}
+table(is.na(phone$nfe_for1))
+```
+
+> account 2
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nfe_for2", coordflippin = T) 
+```
+  
+  + NA's?
+```{r, echo=FALSE}
+table(is.na(phone$nfe_for2))
+```
+
+####What is your current balance?
+> account 1
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "bal_for_acc1", coordflippin = T) + scale_x_discrete(limits = acc_bal)
+```
+   
+   + NA's?
+```{r, echo=FALSE}
+table(is.na(phone$bal_for_acc1))
+```
+
+> account 2
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "bal_for_acc2", coordflippin = T) + scale_x_discrete(limits = acc_bal)
+```
+  
+  + NA's?
+```{r, echo=FALSE}
+table(is.na(phone$bal_for_acc2))
+```
+
+##informal savings
+
+####Number of Informal Savings account:
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "isrep_i_count", mean = T, bin1 = T)
+summary(phone$fsrep_f_count)
+```
+
+####Do you have savings set aside in any of the following vehicles?
+> account 1
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "nfe_info1", coordflippin = T) 
+```
+
+####What is your current balance?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "balance_info_acc1", coordflippin = T) + scale_x_discrete(limits = acc_bal)
+```
+
+  + NAs?
+```{r, echo=FALSE}
+table(is.na(phone$balance_info_acc1))
+```
+
+\
+[back to table of contents](#TOC)
+
+#Loans 
+
+####Do you have any loans outstanding? By loans I mean any amount money borrowed from a bank, employer, moneylender, family member or credit association.
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "l_outout_loan", coordflippin = T) 
+```
+
+####Which of the following types of loans you have outstanding?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "l_outwhat_loan1", coordflippin = T)
+```
+
+####How many?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "l_outlo_rep_count", coordflippin = T)
+```
+
+####What is the amount left to repay?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "am_loan_out1", coordflippin = T) + scale_x_discrete(limits = loan_range)
+```
+
+  + NAs?
+```{r, echo=FALSE}
+table(is.na(phone$am_loan_out1))
+```
+
+\
+[back to table of contents](#TOC)
+
+#Remittances
+
+####Have you made any monetary transfers to friends or family members who don't live in your household over the past 30 days either in person or indirectly?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "rem_sentrem_s", coordflippin = T)
+```
+
+####How many different people have you transferred money to in the past 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_hist(phone, "rem_sentn_receipients", mean = T, bin1 = F)
+summary(phone$rem_sentn_receipients)
+```
+
+####How much did you send in total in the last 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "rem_senttot_am_s", coordflippin = T) + scale_x_discrete(limits = rem_range)
+```
+
+  + NAs?
+```{r, echo=FALSE}
+table(is.na(phone$rem_senttot_am_s))
+```
+
+####Have you made any monetary transfers to other members of your household in the past 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "rem_senthhtr_s", coordflippin = T) 
+```
+
+####How much have you transferred to other members of your household in the past 30 days?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "rem_sentam_hhtr_s", coordflippin = T) + scale_x_discrete(limits = rem_range)
+```
+
+  + NAs?
+```{r, echo=FALSE}
+table(is.na(phone$rem_sentam_hhtr_s))
+```
+
+\
+[back to table of contents](#TOC)
+
+#Enumerator's Evaluation
+
+####On a scale from 1 to 10 where 1 represents "did not understand at all" and 10 represents "understood perfectly" how do you judge the respondent's overall understanding of the survey questionnaire?
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=14, fig.height=5, cache=TRUE}
+plot_percent(phone, "eval", coordflippin = T) + scale_x_discrete(limits = c(1:10))
+```
+
+\
+[back to table of contents](#TOC)
+
+#Additional Analysis Requests
+
+> Salah will get to these over the weekend.
+
+##1) Look for possible enumerator mistakes
+
+##2) Comparison of this data to other follow-ups (make sure it looks okay)
+  + need to merge with other follow-up data
+
+##3) Check balance of treatment groups (control, treatment1, treatment2)
+  + need to merge with baseline data
+
+\
+[back to table of contents](#TOC)
+
+
+
+
